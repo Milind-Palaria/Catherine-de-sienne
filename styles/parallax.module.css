@@ -1,0 +1,26 @@
+/* src/styles/parallax.css */
+.parallax {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    perspective-origin: 0 0;
+  }
+  
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0);
+  }
+  
+  .parallax__layerback {
+    transform: translateZ(-1px) scale(2);
+  }
+  
+  .parallax__layerbase {
+    transform: translateZ(0);
+  }
+  

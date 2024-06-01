@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'NewYork';
+  src: url('/fonts/NewYork.otf') format('opentype');
+
+  font-weight: normal;
+  font-style: normal;
+}@font-face {
+  font-family: 'GreatVictorian';
+  src:url('/fonts/GreatVictorian.otf') format('opentype');
+
+  font-weight: normal;
+  font-style: normal;
+}@font-face {
+  font-family: 'traditio';
+  src:url('/fonts/traditio.ttf') format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+}@font-face {
+  font-family: 'MagnificChaos';
+  src: url('/fonts/MagnificChaos.ttf') format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+}@font-face {
+  font-family: 'HelmswaldPost';
+  src: url('/fonts/HelmswaldPost.ttf') format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
