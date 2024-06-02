@@ -8,7 +8,6 @@ const Home = () => {
   return (
       <div>
             {/* <MainHero/> */}
-            <div>Home</div>
     <section className="home">
       <div className="home-content">
         <header className="home-header">
@@ -21,7 +20,7 @@ const Home = () => {
             <TotalBalanceBox 
             accounts={[]}
             totalBanks={1}
-            totalCurrentBalance={1250.35}
+            totalCurrentBalance={123.4}
           />
         </header>
         RECENT TRANSACTIONS
