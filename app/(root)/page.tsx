@@ -1,12 +1,12 @@
 import MainHero from '@/components/MainHero'
 import HeaderBox from '@/components/HeaderBox';
-import AnimatedCounter from '@/components/AnimatedCounter';
+import TotalBalanceBox from '@/components/TotalBalanceBox';
 
 const Home = () => {
   const loggedIn = { firstName: 'Milind', lastName: 'Palaria', email: 'palaria23@gmail.com' };
   return (
       <div>
-            <MainHero/>
+            {/* <MainHero/> */}
             <div>Home</div>
     <section className="home">
       <div className="home-content">
@@ -17,7 +17,11 @@ const Home = () => {
             user={loggedIn?.firstName || 'Guest'}
             subtext="Access and manage your account and transactions efficiently."
           />
-          <AnimatedCounter amount={12000}/>
+            <TotalBalanceBox 
+            accounts={[]}
+            totalBanks={1}
+            totalCurrentBalance={1250.35}
+          />
         </header>
         RECENT TRANSACTIONS
       </div>

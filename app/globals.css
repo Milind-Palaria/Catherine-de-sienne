@@ -2,38 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'NewYork';
-  src: url('/fonts/NewYork.otf') format('opentype');
-
-  font-weight: normal;
-  font-style: normal;
-}@font-face {
-  font-family: 'GreatVictorian';
-  src:url('/fonts/GreatVictorian.otf') format('opentype');
-
-  font-weight: normal;
-  font-style: normal;
-}@font-face {
-  font-family: 'traditio';
-  src:url('/fonts/traditio.ttf') format('truetype');
-
-  font-weight: normal;
-  font-style: normal;
-}@font-face {
-  font-family: 'MagnificChaos';
-  src: url('/fonts/MagnificChaos.ttf') format('truetype');
-
-  font-weight: normal;
-  font-style: normal;
-}@font-face {
-  font-family: 'HelmswaldPost';
-  src: url('/fonts/HelmswaldPost.ttf') format('truetype');
-
-  font-weight: normal;
-  font-style: normal;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -76,6 +44,7 @@
 }
 
 @layer utilities {
+
   .input-class {
     @apply text-16 placeholder:text-16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
   }
@@ -389,10 +358,6 @@
 
   .footer_image {
     @apply relative size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
-  }
-
-  .footer_image-mobile {
-    @apply relative size-5;
   }
 
   /* Sidebar */
