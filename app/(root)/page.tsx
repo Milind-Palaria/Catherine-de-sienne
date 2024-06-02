@@ -1,5 +1,6 @@
 import MainHero from '@/components/MainHero'
 import HeaderBox from '@/components/HeaderBox';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 const Home = () => {
   const loggedIn = { firstName: 'Milind', lastName: 'Palaria', email: 'palaria23@gmail.com' };
@@ -16,6 +17,7 @@ const Home = () => {
             user={loggedIn?.firstName || 'Guest'}
             subtext="Access and manage your account and transactions efficiently."
           />
+          <AnimatedCounter amount={12000}/>
         </header>
         RECENT TRANSACTIONS
       </div>
