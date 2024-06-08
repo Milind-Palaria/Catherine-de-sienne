@@ -22,7 +22,7 @@ import CustomInput from './CustomInput';
 import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
+import { getLoggedInUser,signIn,signUp } from '@/lib/actions/user.actions';
 
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
@@ -78,7 +78,7 @@ const AuthForm = ({ type }: { type: string }) => {
               height={34}
               alt="Horizon logo"
             />
-            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Horizon</h1>
+            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Merchant Bank</h1>
           </Link>
 
           <div className="flex flex-col gap-1 md:gap-3">
