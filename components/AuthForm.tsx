@@ -78,7 +78,7 @@ const AuthForm = ({ type }: { type: string }) => {
               height={34}
               alt="Company logo"
             />
-            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Merchant Bank</h1>
+            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Catherine De Sienne</h1>
           </Link>
 
           <div className="flex flex-col gap-1 md:gap-3">
