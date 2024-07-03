@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormControl, FormField, FormLabel, FormMessage } from './ui/form'
 import { Input } from './ui/input'
-
+// import { Control, Controller } from 'react-hook-form'
 import { Control, FieldPath } from 'react-hook-form'
 import { z } from 'zod'
 import { authFormSchema } from '@/lib/utils'
@@ -12,7 +12,7 @@ interface State {
   abbreviation: string;
   name: string;
 }
-interface CustomInput {
+interface CustomInputProps {
   control: Control<z.infer<typeof formSchema>>,
   name: FieldPath<z.infer<typeof formSchema>>,
   label: string,
@@ -20,7 +20,7 @@ interface CustomInput {
   validStates: State[];
 }
 
-const CustomInput = ({ control, name, label, placeholder, validStates }) => {
+const CustomInput: React.FC<CustomInputProps> =({control,name,label,placeholder,validStates}) => {
   return (
     <FormField
       control={control}
