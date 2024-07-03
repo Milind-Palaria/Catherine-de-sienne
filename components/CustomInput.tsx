@@ -20,7 +20,7 @@ interface CustomInputProps {
   validStates: State[];
 }
 
-const CustomInput: React.FC<CustomInputProps> =({control,name,label,placeholder,validStates}) => {
+const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeholder, validStates }) => {
   return (
     <FormField
       control={control}
