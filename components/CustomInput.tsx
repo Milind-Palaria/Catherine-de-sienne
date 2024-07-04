@@ -20,51 +20,6 @@ interface CustomInputProps {
   validStates: State[];
 }
 
-// const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeholder, validStates }) => {
-//   return (
-//     <FormField
-//       control={control}
-//       name={name}
-//       render={({ field }) => (
-//         <div className="form-item">
-//           <FormLabel className="form-label">
-//             {label}
-//           </FormLabel>
-//           <div className="flex w-full flex-col">
-//             <FormControl>
-//               {name === 'state' ? (
-//                 <Select
-//                   id="state"
-//                   className="shadcn-select"
-//                   value={field.value}
-//                   onChange={field.onChange}
-//                 >
-//                   <option value="" disabled>
-//                     Select a state
-//                   </option>
-//                   {validStates.map((state) => (
-//                     <option key={state.abbreviation} value={state.abbreviation}>
-//                       {state.name}
-//                     </option>
-//                   ))}
-//                 </Select>
-//               ) : (
-//                 <Input
-//                   placeholder={placeholder}
-//                   className="input-class"
-//                   type={name === 'password' ? 'password' : 'text'}
-//                   {...field}
-//                 />
-//               )}
-//             </FormControl>
-//             <FormMessage className="form-message mt-2" />
-//           </div>
-//         </div>
-//       )}
-//     />
-//   );
-// };
-
 const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeholder, validStates }) => {
   const [displayValue, setDisplayValue] = useState('');
 
