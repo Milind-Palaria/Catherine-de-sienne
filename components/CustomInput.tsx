@@ -83,7 +83,7 @@ const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeho
                 <Select
                   id="state"
                   className="shadcn-select"
-                  value={field.value}
+                  value={field.value || ''}
                   onChange={field.onChange}
                 >
                   <option value="" disabled>
