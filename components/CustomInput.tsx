@@ -55,21 +55,28 @@ const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeho
                   placeholder={placeholder}
                   className="input-class"
                   type={name === 'password' ? 'password' : 'text'}
-                  value={name === 'postalCode' ? displayValue : field.value}
+                  value={name === 'postalCode' || name === 'ssn' ? displayValue : field.value}
                   onChange={(e) => {
                     let value = e.target.value;
                     if (name === 'postalCode') {
-                      value = value.replace(/\D/g, ''); // Remove non-digit characters
+                      value = value.replace(/\D/g, ''); 
                       if (value.length > 6) {
                         value = value.slice(0, 6);
                       }
                       setDisplayValue(value);
-                      field.onChange(value.slice(0, 5)); // Store only the first 5 digits
+                      field.onChange(value.slice(0, 5)); 
+                    } else if (name === 'ssn') {
+                      value = value.replace(/\D/g, ''); 
+                      if (value.length > 4) {
+                        value = value.slice(0, 4); 
+                      }
+                      setDisplayValue(value);
+                      field.onChange(value);
                     } else {
                       field.onChange(e);
                     }
                   }}
-                  maxLength={name === 'postalCode' ? 6 : undefined}
+                  maxLength={name === 'postalCode' ? 6 : name === 'ssn' ? 4 : undefined}
                 />
               )}
             </FormControl>
