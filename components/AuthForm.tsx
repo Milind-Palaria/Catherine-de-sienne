@@ -22,60 +22,7 @@ import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
 import PlaidLink from './PlaidLink';
-
-const validStates = [
-  { abbreviation: 'AL', name: 'Andhra Pradesh' },
-  { abbreviation: 'AK', name: 'Arunachal Pradesh' },
-  { abbreviation: 'AZ', name: 'Assam' },
-  { abbreviation: 'AR', name: 'Bihar' },
-  { abbreviation: 'CA', name: 'Chhattisgarh' },
-  { abbreviation: 'CO', name: 'Goa' },
-  { abbreviation: 'CT', name: 'Gujarat' },
-  { abbreviation: 'DE', name: 'Haryana' },
-  { abbreviation: 'FL', name: 'Himachal Pradesh' },
-  { abbreviation: 'GA', name: 'Jharkhand' },
-  { abbreviation: 'HI', name: 'Karnataka' },
-  { abbreviation: 'ID', name: 'Kerala' },
-  { abbreviation: 'IL', name: 'Madhya Pradesh' },
-  { abbreviation: 'IN', name: 'Maharashtra' },
-  { abbreviation: 'IA', name: 'Manipur' },
-  { abbreviation: 'KS', name: 'Meghalaya' },
-  { abbreviation: 'KY', name: 'Mizoram' },
-  { abbreviation: 'LA', name: 'Nagaland' },
-  { abbreviation: 'ME', name: 'Odisha' },
-  { abbreviation: 'MD', name: 'Punjab' },
-  { abbreviation: 'MA', name: 'Rajasthan' },
-  { abbreviation: 'MI', name: 'Sikkim' },
-  { abbreviation: 'MN', name: 'Tamil Nadu' },
-  { abbreviation: 'MS', name: 'Telangana' },
-  { abbreviation: 'MO', name: 'Tripura' },
-  { abbreviation: 'MT', name: 'Uttar Pradesh' },
-  { abbreviation: 'NE', name: 'Uttarakhand' },
-  { abbreviation: 'NV', name: 'West Bengal' },
-  { abbreviation: 'NH', name: 'Andaman and Nicobar Islands' },
-  { abbreviation: 'NJ', name: 'Chandigarh' },
-  { abbreviation: 'NM', name: 'Dadra and Nagar Haveli and Daman and Diu' },
-  { abbreviation: 'NY', name: 'Lakshadweep' },
-  { abbreviation: 'NC', name: 'Delhi' },
-  { abbreviation: 'ND', name: 'Puducherry' },
-  { abbreviation: 'OH', name: 'Ladakh' },
-  { abbreviation: 'OK', name: 'Jammu and Kashmir' },
-  { abbreviation: 'OR', name: 'Goa' },
-  { abbreviation: 'PA', name: 'Maharashtra' },
-  { abbreviation: 'RI', name: 'Gujarat' },
-  { abbreviation: 'SC', name: 'West Bengal' },
-  { abbreviation: 'SD', name: 'Bihar' },
-  { abbreviation: 'TN', name: 'Punjab' },
-  { abbreviation: 'TX', name: 'Odisha' },
-  { abbreviation: 'UT', name: 'Rajasthan' },
-  { abbreviation: 'VT', name: 'Sikkim' },
-  { abbreviation: 'VA', name: 'Uttar Pradesh' },
-  { abbreviation: 'WA', name: 'Meghalaya' },
-  { abbreviation: 'WV', name: 'Tripura' },
-  { abbreviation: 'WI', name: 'Nagaland' },
-  { abbreviation: 'WY', name: 'Manipur' }
-];
-
+import { validStates, State } from './data/ValidStates';
 
 const AuthForm = ({ type }: { type: string }) => {
   const [selectedState, setSelectedState] = useState('');
@@ -186,7 +133,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   --  {validStates.map((data) => (<span>{data} -- </span> ))}
                  </div>
                     </div> */}
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 flex-col">
                     <CustomInput control={form.control} name='state' label="State" placeholder='Enter a US state' validStates={validStates}/>
                     {/* <div>
                       <label htmlFor="state">Select your state:</label>
