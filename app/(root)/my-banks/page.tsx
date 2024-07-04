@@ -36,3 +36,5 @@ const MyBanks = async () => {
     </section>
   )
 }
+
+export default MyBanks

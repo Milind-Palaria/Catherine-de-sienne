@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BankTabItem } from "./BankTabItem"
 import BankInfo from "./BankInfo"
 import TransactionsTable from "./TransactionsTable"
-import { Pagination } from './Pagination'
+import { Pagination } from "./Pagination"
 
 const RecentTransactions = ({
   accounts,

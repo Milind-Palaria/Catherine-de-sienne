@@ -5,7 +5,7 @@ import { Input } from './ui/input'
 import { Control, FieldPath } from 'react-hook-form'
 import { z } from 'zod'
 import { authFormSchema } from '@/lib/utils'
-import Select from './ui/Select'
+import Select from "./select"
 
 const formSchema = authFormSchema('sign-up')
 interface State {
