@@ -4,7 +4,7 @@ import { GlobeDemo } from '@/components/ui/GlobeUse'
 
 const Welcome = () => {
   return (
-    <section className="flex-center size-full max-sm:px-6">
+    <section className="bg-[#000] flex-center h-screen w-full">
     
     <GlobeDemo/>
   </section>
