@@ -24,6 +24,9 @@ const config = {
           1: "rgba(255, 255, 255, 0.10)",
         },
         bankGradient: "#0179FE",
+        backgroundImage: {
+          'custom-gradient': 'linear-gradient(180.2deg, #785589 -6.9%, #23091F 76.7%)',
+        },
         indigo: {
           500: "#6172F3",
           700: "#3538CD",
