@@ -9,13 +9,12 @@
 }
 @font-face {
   font-family: 'Boska';
-  src: url('/fonts/Boska-Variable.ttf') format('truetype');
+  src: url('/fonts/Melodrama-Variable.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-
 body {
-  font-family: 'Boska', sans-serif !important;
+  font-family: 'Boska', sans-serif;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -376,7 +375,7 @@ body {
   }
 
   .sidebar-logo {
-    @apply 2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden;
+    @apply 2xl:text-26  text-[26px] font-bold text-black-1 max-xl:hidden;
   }
 
   .sidebar-link {

@@ -11,6 +11,7 @@ export function GlobeDemo() {
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
+    // globeColor: "#4C3BCF",
     showAtmosphere: false,
     atmosphereColor: "#000000",
     atmosphereAltitude: 0.1,

@@ -39,7 +39,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
               height={34}
               alt="Company logo"
             />
-            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Merchant Bank</h1>
+            <h1 className="text-26 font-bold text-black-1">Merchant Bank</h1>
           </Link>
           <div className="mobilenav-sheet">
             <SheetClose asChild>
