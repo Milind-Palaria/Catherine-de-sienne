@@ -1,28 +1,26 @@
-export const dynamic = 'force-dynamic'
-import type { Metadata } from "next";
-import { Inter,IBM_Plex_Serif } from "next/font/google";
-import "./globals.css";
-// const inter = Inter({ subsets: ["latin"], variable:"--font-inter" });
-// const ibmPlexSerif = IBM_Plex_Serif({
-//   subsets:['latin'],
-//   weight:['400','700'],
-//   variable: '--font-ibm-plex-serif'
-// })
+import type { Metadata } from 'next';
+import './globals.css';
+import ClientComponent from '../components/ClientComponent';
 
+export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
-  title: "Catherine De Sienne - The Merchant Bank",
-  description: "Catherine De Sienne - The Merchant Bank",
-  icons: '/icons/logo.svg'
+  title: 'Catherine De Sienne - The Merchant Bank',
+  description: 'Catherine De Sienne - The Merchant Bank',
+  icons: '/icons/logo.svg',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ClientComponent>
+          {children}
+        </ClientComponent>
+      </body>
     </html>
   );
 }
