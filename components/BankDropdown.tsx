@@ -60,7 +60,7 @@ export const BankDropdown = ({
         align="end"
       >
         <SelectGroup>
-          <SelectLabel className="py-2 font-normal text-gray-500">
+          <SelectLabel className="py-2 font-semibold text-gray-500">
             Select a bank to display
           </SelectLabel>
           {accounts.map((account: Account) => (

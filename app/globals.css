@@ -189,7 +189,7 @@ body {
   }
 
   .profile-email {
-    @apply text-16 font-normal text-gray-600;
+    @apply text-16 font-semibold text-gray-600;
   }
 
   .banks {
@@ -227,7 +227,7 @@ body {
   }
 
   .header-box-subtext {
-    @apply text-14 lg:text-16 font-normal text-gray-600;
+    @apply text-14 lg:text-16 font-semibold text-gray-600;
   }
 
   /* Bank Card */
@@ -306,7 +306,7 @@ body {
   }
 
   .form-link {
-    @apply text-14 cursor-pointer font-medium text-bankGradient;
+    @apply text-14 cursor-pointer font-bold text-bankGradient;
   }
 
   /* Payment Transfer */
