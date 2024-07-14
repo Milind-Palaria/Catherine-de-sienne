@@ -155,12 +155,15 @@ const AuthForm = ({ type }: { type: string }) => {
               <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password'  validStates={validStates}/>
                                 </div>
               <div className="flex flex-col gap-4">
-                <Button type="submit" disabled={isLoading} className="bg-gradient-to-br relative group/btn  from-zinc-900 to-zinc-900 block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]">
+                <Button type="submit" disabled={isLoading} className="bg-gradient-to-br relative group/btn  from-zinc-900 to-zinc-900 block bg-zinc-800 text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]">
                   {isLoading ? (
-                    <>
-                      <Loader2 size={20} className="animate-spin" /> &nbsp;
+                    <div className='relative'>
+                    <Loader2 size={20} className="animate-spin" /> &nbsp;
+                    <div className='-translate-y-10'>
                       Loading...
-                    </>
+                    </div>
+                    </div>
+                    
                   ) : type === 'sign-in'
                     ? 'Sign In →' : 'Sign Up →'}
                     <BottomGradient />
