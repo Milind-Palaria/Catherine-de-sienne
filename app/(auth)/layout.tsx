@@ -22,7 +22,7 @@ export default function RootLayout({
     </div> */}
       <DotPattern
         className={cn(
-          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
+          "[mask-image:radial-gradient(70vh_circle_at_center,white,transparent)]",
         )}
       />
     {children}

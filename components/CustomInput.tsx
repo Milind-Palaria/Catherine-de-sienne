@@ -1,11 +1,18 @@
+"use client";
+// import React from "react";
+// import { Label } from "./ui/authLabel";
+// import { Input } from "./ui/authInput";
+import { cn } from "@/lib/utils";
 import React, { useState } from 'react'
 import { FormControl, FormField, FormLabel, FormMessage } from './ui/form'
-import { Input } from './ui/input'
+// import { Input } from './ui/input'
 // import { Control, Controller } from 'react-hook-form'
 import { Control, FieldPath } from 'react-hook-form'
 import { z } from 'zod'
 import { authFormSchema } from '@/lib/utils'
 import Select from "./select"
+import { Label } from "./ui/authLabel";
+import { Input } from "./ui/authInput";
 
 const formSchema = authFormSchema('sign-up')
 interface State {
@@ -29,10 +36,10 @@ const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeho
       name={name}
       render={({ field }) => (
         <div className="form-item">
-          <FormLabel className="form-label">
+          {/* <FormLabel className="form-label">
             {label}
-          </FormLabel>
-          <div className="flex w-full flex-col">
+          </FormLabel> */}
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <FormControl>
               {name === 'state' && validStates ? (
                 <Select
@@ -51,9 +58,11 @@ const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeho
                   ))}
                 </Select>
               ) : (
+                <LabelInputContainer>
+                <Label htmlFor={`${label}`}>{label}</Label>
                 <Input
                   placeholder={placeholder}
-                  className="input-class"
+                  className="bg-gradient-to-br  group/btn  from-zinc-900 to-zinc-900 block bg-zinc-800 w-full text-white shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                   type={name === 'password' ? 'password' : 'text'}
                   value={name === 'postalCode' || name === 'ssn' ? displayValue : field.value}
                   onChange={(e) => {
@@ -78,6 +87,7 @@ const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeho
                   }}
                   maxLength={name === 'postalCode' ? 6 : name === 'ssn' ? 4 : undefined}
                 />
+                </LabelInputContainer>
               )}
             </FormControl>
             <FormMessage className="form-message mt-2" />
@@ -87,4 +97,18 @@ const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeho
     />
   );
 };
+const LabelInputContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+      <div className={cn("flex flex-col space-y-2 w-full ", className)}>
+          {children}
+      </div>
+  );
+};
+
 export default CustomInput

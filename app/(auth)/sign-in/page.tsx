@@ -5,9 +5,9 @@ import { cn } from '@/lib/utils'
 
 const SignIn = () => {
   return (
-    <section className="flex-center size-full max-sm:px-6 bg-[#0D090A] text-white font-secondary">
-    {/* <AuthForm type="sign-in" /> */}
-    <AuthFormUi/>
+    <section className=" h-screen flex-center size-full max-sm:px-6 bg-[#0D090A] text-white font-secondary">
+    <AuthForm type="sign-in" />
+    {/* <AuthFormUi/> */}
   
   </section>
   )

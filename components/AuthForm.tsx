@@ -82,31 +82,37 @@ const AuthForm = ({ type }: { type: string }) => {
     }
   }
   return (
-    <section className="auth-form z-20">
-      <header className='flex flex-col gap-5 md:gap-8'>
-        <Link href="/" className="cursor-pointer flex items-center gap-1">
+    <section className="max-w-md w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-[#000]/20 backdrop-blur-lg border border-white">
+      <header className='flex flex-col gap-3 md:gap-4 items-center pb-5'>
+        <Link href="/welcome" className="cursor-pointer flex items-center font-primary gap-2">
           <Image
             src="/icons/cathedral-logo.png"
-            width={34}
-            height={34}
+            width={60}
+            height={60}
             alt="logo"
           />
-          <h1 className="text-26 font-bold text-white">Catherine de Sienne</h1>
+          <h1 className="text-22 md:text-24 font-bold text-white">Catherine de Sienne</h1>
+          <Image
+            src="/icons/cathedral-logo.png"
+            width={60}
+            height={60}
+            alt="logo"
+          />
         </Link>
-        <div className="flex flex-col gap-1 md:gap-3">
-          <h1 className="text-24 lg:text-36 font-semibold text-white">
+        <div className="flex flex-col gap-1 md:gap-3 items-center">
+          <h1 className="text-24 lg:text-30 text-center font-semibold text-white">
             {user
               ? 'Link Account'
               : type === 'sign-in'
                 ? 'Sign In'
                 : 'Sign Up'
             }
-            <p className="text-16 font-semibold text-white">
+            {/* <p className="text-16 font-thin  text-center text-white">
               {user
                 ? 'Link your account to get started'
                 : 'Please enter your details'
               }
-            </p>
+            </p> */}
           </h1>
         </div>
       </header>
@@ -117,7 +123,7 @@ const AuthForm = ({ type }: { type: string }) => {
       ) : (
         <>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
               {type === 'sign-up' && (
                 <>
                   <div className="flex gap-4">
@@ -156,25 +162,26 @@ const AuthForm = ({ type }: { type: string }) => {
               <CustomInput control={form.control} name='email' label="Email" placeholder='Enter your email'  validStates={validStates}/>
               <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password'  validStates={validStates}/>
               <div className="flex flex-col gap-4">
-                <Button type="submit" disabled={isLoading} className="form-btn">
+                <Button type="submit" disabled={isLoading} className="bg-gradient-to-br relative group/btn  from-zinc-900 to-zinc-900 block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]">
                   {isLoading ? (
                     <>
                       <Loader2 size={20} className="animate-spin" /> &nbsp;
                       Loading...
                     </>
                   ) : type === 'sign-in'
-                    ? 'Sign In' : 'Sign Up'}
+                    ? 'Sign In →' : 'Sign Up →'}
+                    <BottomGradient />
                 </Button>
               </div>
             </form>
           </Form>
-          <footer className="flex justify-center gap-1">
-            <p className="text-14 font-semibold text-white">
+          <footer className="flex justify-center gap-1 pt-5">
+            <p className="text-14 font-medium text-white">
               {type === 'sign-in'
                 ? "Don't have an account?"
                 : "Already have an account?"}
             </p>
-            <Link href={type === 'sign-in' ? '/sign-up' : '/sign-in'} className="form-link pl-2">
+            <Link href={type === 'sign-in' ? '/sign-up' : '/sign-in'} className="text-14 hover:underline font-semibold pl-1">
               {type === 'sign-in' ? 'Sign up' : 'Sign in'}
             </Link>
           </footer>
@@ -183,4 +190,12 @@ const AuthForm = ({ type }: { type: string }) => {
     </section>
   )
 }
+const BottomGradient = () => {
+    return (
+        <>
+            <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+            <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+        </>
+    );
+};
 export default AuthForm
