@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex relative min-h-screen w-full justify-between ">
+    <main className="flex relative min-h-screen w-full justify-between overflow-x-hidden">
     {/* <div className="auth-asset">
       <div>
         <Image 
@@ -23,6 +23,7 @@ export default function RootLayout({
       <DotPattern
         className={cn(
           "[mask-image:radial-gradient(70vh_circle_at_center,white,transparent)]",
+          "md:[mask-image:radial-gradient(45vw_circle_at_center,white,transparent)]"
         )}
       />
     {children}

@@ -35,16 +35,19 @@ const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeho
       control={control}
       name={name}
       render={({ field }) => (
-        <div className="form-item">
+        <div className="form-item w-full">
           {/* <FormLabel className="form-label">
             {label}
           </FormLabel> */}
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <FormControl>
               {name === 'state' && validStates ? (
+                 <div className="flex flex-col gap-[10px]">
+                 <Label htmlFor={`${label}`}>{label}
+                 </Label>
                 <Select
                   id="state"
-                  className="shadcn-select"
+                  className="shadcn-select h-10 w-full px-3 py-2 text-sm rounded-md bg-gradient-to-br  group/btn  from-zinc-900 to-zinc-900 block bg-zinc-800 text-white shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                   value={field.value || ''}
                   onChange={field.onChange}
                 >
@@ -57,6 +60,8 @@ const CustomInput: React.FC<CustomInputProps> = ({ control, name, label, placeho
                     </option>
                   ))}
                 </Select>
+                </div>
+
               ) : (
                 <LabelInputContainer>
                 <Label htmlFor={`${label}`}>{label}</Label>

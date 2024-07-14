@@ -82,23 +82,10 @@ const AuthForm = ({ type }: { type: string }) => {
     }
   }
   return (
-    <section className="max-w-md w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-[#000]/20 backdrop-blur-lg border border-white">
+    <section className="w-[85vw] md:w-[50vw] mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-[#000]/20 backdrop-blur-lg border border-white">
+      
       <header className='flex flex-col gap-3 md:gap-4 items-center pb-5'>
-        <Link href="/welcome" className="cursor-pointer flex items-center font-primary gap-2">
-          <Image
-            src="/icons/cathedral-logo.png"
-            width={60}
-            height={60}
-            alt="logo"
-          />
-          <h1 className="text-22 md:text-24 font-bold text-white">Catherine de Sienne</h1>
-          <Image
-            src="/icons/cathedral-logo.png"
-            width={60}
-            height={60}
-            alt="logo"
-          />
-        </Link>
+       
         <div className="flex flex-col gap-1 md:gap-3 items-center">
           <h1 className="text-24 lg:text-30 text-center font-semibold text-white">
             {user
@@ -126,12 +113,15 @@ const AuthForm = ({ type }: { type: string }) => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
               {type === 'sign-up' && (
                 <>
-                  <div className="flex gap-4">
+                  <div className="flex w-full justify-around gap-2">
                     <CustomInput control={form.control} name='firstName' label="First Name" placeholder='Enter your first name'  validStates={validStates}/>
-                    <CustomInput control={form.control} name='lastName' label="Last Name" placeholder='Enter your first name'  validStates={validStates}/>
+                    <CustomInput control={form.control} name='lastName' label="Last Name" placeholder='Enter your last name'  validStates={validStates}/>
                   </div>
+                  <div className="flex w-full justify-around gap-2">
+
                   <CustomInput control={form.control} name='address1' label="Address" placeholder='Enter your specific address'  validStates={validStates}/>
                   <CustomInput control={form.control} name='city' label="City" placeholder='Enter your city'  validStates={validStates}/>
+                  </div>
                   {/* <div className=' flex flex-wrap flex-col justify-center items-center gap-3 w-full p-3 bg-blue-600/50 rounded-lg '>
                   <h1>Valid US State Codes </h1>
                  <div className='flex flex-wrap  gap-2 justify-center items-center bg-white'>
@@ -139,7 +129,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   --  {validStates.map((data) => (<span>{data} -- </span> ))}
                  </div>
                     </div> */}
-                  <div className="flex gap-4 flex-col">
+                  <div className="flex gap-2">
                     <CustomInput control={form.control} name='state' label="State" placeholder='Enter a US state' validStates={validStates}/>
                     {/* <div>
                       <label htmlFor="state">Select your state:</label>
@@ -153,14 +143,17 @@ const AuthForm = ({ type }: { type: string }) => {
                     </div> */}
                     <CustomInput control={form.control} name='postalCode' label="Postal Code" placeholder='Enter 5 digit zipcode'  validStates={validStates}/>
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex gap-2">
                     <CustomInput control={form.control} name='dateOfBirth' label="Date of Birth" placeholder='YYYY-MM-DD'  validStates={validStates}/>
                     <CustomInput control={form.control} name='ssn' label="SSN" placeholder='Example: 1234'  validStates={validStates}/>
                   </div>
                 </>
               )}
+                                <div className="flex flex-col gap-2">
+
               <CustomInput control={form.control} name='email' label="Email" placeholder='Enter your email'  validStates={validStates}/>
               <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password'  validStates={validStates}/>
+                                </div>
               <div className="flex flex-col gap-4">
                 <Button type="submit" disabled={isLoading} className="bg-gradient-to-br relative group/btn  from-zinc-900 to-zinc-900 block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]">
                   {isLoading ? (
