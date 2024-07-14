@@ -32,7 +32,7 @@ const Sidebar = ({ user }) => {
       <nav className="flex flex-col gap-4">
         <Link href="/" className="mb-12 cursor-pointer flex items-center gap-2" onClick={handleLinkClick}>
           <Image
-            src="/icons/logo.svg"
+            src="/icons/cathedral-logo.png"
             width={34}
             height={34}
             alt="Company logo"
