@@ -1,3 +1,5 @@
+import DotPattern from "@/components/magicui/dot-pattern";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function RootLayout({
@@ -6,8 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex min-h-screen w-full justify-between ">
-    {children}
+    <main className="flex relative min-h-screen w-full justify-between ">
     {/* <div className="auth-asset">
       <div>
         <Image 
@@ -19,7 +20,13 @@ export default function RootLayout({
         />
       </div>
     </div> */}
+      <DotPattern
+        className={cn(
+          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
+        )}
+      />
+    {children}
+
     </main>
   );
 }
-// font-inter

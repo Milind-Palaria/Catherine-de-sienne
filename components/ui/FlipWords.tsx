@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 
 export const FlipWords = ({
   words,
-  duration = 3000,
+  duration = 2000,
   className,
 }: {
   words: string[];
@@ -35,11 +35,6 @@ export const FlipWords = ({
         setIsAnimating(false);
       }}
     >
-        <style jsx>{`
-      .custom-font {
-  font-family: 'Britney', sans-serif !important;
-      }
-    `}</style>
       <motion.div
         initial={{
           opacity: 0,
@@ -58,14 +53,14 @@ export const FlipWords = ({
         }}
         exit={{
           opacity: 0,
-          y: -40,
-          x: 40,
+          y: -20,
+          x: 20,
           filter: "blur(8px)",
-          scale: 1.5,
+          scale: 1.2,
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-left text-[#4C3BCF] px-2 md:px-1 lg:px-3 font-bold",
+          "z-10 inline-block relative text-left text-[#4C3BCF]/80 px-2 md:px-1 lg:px-3 font-bold",
           className
         )}
         key={currentWord}

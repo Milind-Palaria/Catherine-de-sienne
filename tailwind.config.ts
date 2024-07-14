@@ -4,7 +4,7 @@ const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
- 
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -24,6 +24,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        primary: ['Melodrama', 'sans-serif'],
+        secondary: ['Poppins', 'sans-serif'],
+      },
       colors: {
         fill: {
           1: "rgba(255, 255, 255, 0.10)",
@@ -90,6 +94,7 @@ const config = {
         profile:
           "0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)",
         creditCard: "8px 10px 16px 0px rgba(0, 0, 0, 0.05)",
+        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
       keyframes: {
         "accordion-down": {
@@ -118,7 +123,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
