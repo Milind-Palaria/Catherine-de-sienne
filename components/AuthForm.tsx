@@ -27,7 +27,7 @@ import { validStates, State } from './data/ValidStates';
 const AuthForm = ({ type }: { type: string }) => {
   const [selectedState, setSelectedState] = useState('');
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>)  => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedState(event.target.value);
   };
   const router = useRouter();
@@ -83,9 +83,9 @@ const AuthForm = ({ type }: { type: string }) => {
   }
   return (
     <section className="w-[85vw] md:w-[50vw] mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-[#000]/20 backdrop-blur-lg border border-white">
-      
+
       <header className='flex flex-col gap-3 md:gap-4 items-center pb-5'>
-       
+
         <div className="flex flex-col gap-1 md:gap-3 items-center">
           <h1 className="text-24 lg:text-30 text-center font-semibold text-white">
             {user
@@ -104,23 +104,32 @@ const AuthForm = ({ type }: { type: string }) => {
         </div>
       </header>
       {user ? (
-        <div className="flex flex-col gap-4">
-          <PlaidLink user={user} variant="primary" />
-        </div>
+         <div className="flex flex-col gap-2">
+         <PlaidLink user={user} variant="primary" />
+         <div className="flex flex-col gap-2 pt-4 items-center text-center">
+ 
+         {/* <h1 className='text-24 md:text-28'>Warning: This Project is in Sandbox mode</h1> */}
+         <h3 className='text-sm md:text-20 opacity-90'>While connecting use these credentials :</h3>
+         <h1 className='text-12 md:text-20 pt-2 md:pt-3'><span className=' opacity-80'>Username :</span> user_good </h1>
+         <h1 className='text-12 md:text-20'><span className=' opacity-80'>Password : </span>pass_good </h1>
+ 
+         </div>
+       </div>
       ) : (
+      
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
               {type === 'sign-up' && (
                 <>
                   <div className="flex w-full justify-around gap-2">
-                    <CustomInput control={form.control} name='firstName' label="First Name" placeholder='Enter your first name'  validStates={validStates}/>
-                    <CustomInput control={form.control} name='lastName' label="Last Name" placeholder='Enter your last name'  validStates={validStates}/>
+                    <CustomInput control={form.control} name='firstName' label="First Name" placeholder='Enter your first name' validStates={validStates} />
+                    <CustomInput control={form.control} name='lastName' label="Last Name" placeholder='Enter your last name' validStates={validStates} />
                   </div>
                   <div className="flex w-full justify-around gap-2">
 
-                  <CustomInput control={form.control} name='address1' label="Address" placeholder='Enter your specific address'  validStates={validStates}/>
-                  <CustomInput control={form.control} name='city' label="City" placeholder='Enter your city'  validStates={validStates}/>
+                    <CustomInput control={form.control} name='address1' label="Address" placeholder='Enter your specific address' validStates={validStates} />
+                    <CustomInput control={form.control} name='city' label="City" placeholder='Enter your city' validStates={validStates} />
                   </div>
                   {/* <div className=' flex flex-wrap flex-col justify-center items-center gap-3 w-full p-3 bg-blue-600/50 rounded-lg '>
                   <h1>Valid US State Codes </h1>
@@ -130,7 +139,7 @@ const AuthForm = ({ type }: { type: string }) => {
                  </div>
                     </div> */}
                   <div className="flex gap-2">
-                    <CustomInput control={form.control} name='state' label="State" placeholder='Enter a US state' validStates={validStates}/>
+                    <CustomInput control={form.control} name='state' label="State" placeholder='Enter a US state' validStates={validStates} />
                     {/* <div>
                       <label htmlFor="state">Select your state:</label>
                       <select id="state" value={selectedState} onChange={handleChange}>
@@ -141,32 +150,32 @@ const AuthForm = ({ type }: { type: string }) => {
                         ))}
                       </select>
                     </div> */}
-                    <CustomInput control={form.control} name='postalCode' label="Postal Code" placeholder='Enter 5 digit zipcode'  validStates={validStates}/>
+                    <CustomInput control={form.control} name='postalCode' label="Postal Code" placeholder='Enter 5 digit zipcode' validStates={validStates} />
                   </div>
                   <div className="flex gap-2">
-                    <CustomInput control={form.control} name='dateOfBirth' label="Date of Birth" placeholder='YYYY-MM-DD'  validStates={validStates}/>
-                    <CustomInput control={form.control} name='ssn' label="SSN" placeholder='Example: 1234'  validStates={validStates}/>
+                    <CustomInput control={form.control} name='dateOfBirth' label="Date of Birth" placeholder='YYYY-MM-DD' validStates={validStates} />
+                    <CustomInput control={form.control} name='ssn' label="SSN" placeholder='Example: 1234' validStates={validStates} />
                   </div>
                 </>
               )}
-                                <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
 
-              <CustomInput control={form.control} name='email' label="Email" placeholder='Enter your email'  validStates={validStates}/>
-              <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password'  validStates={validStates}/>
-                                </div>
+                <CustomInput control={form.control} name='email' label="Email" placeholder='Enter your email' validStates={validStates} />
+                <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password' validStates={validStates} />
+              </div>
               <div className="flex flex-col gap-4">
                 <Button type="submit" disabled={isLoading} className="bg-gradient-to-br relative group/btn  from-zinc-900 to-zinc-900 block bg-zinc-800 text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]">
                   {isLoading ? (
                     <div className='relative'>
-                    <Loader2 size={20} className="animate-spin" /> &nbsp;
-                    <div className='-translate-y-10'>
-                      Loading...
+                      <Loader2 size={20} className="animate-spin" /> &nbsp;
+                      <div className='-translate-y-10'>
+                        Loading...
+                      </div>
                     </div>
-                    </div>
-                    
+
                   ) : type === 'sign-in'
                     ? 'Sign In →' : 'Sign Up →'}
-                    <BottomGradient />
+                  <BottomGradient />
                 </Button>
               </div>
             </form>
@@ -187,11 +196,11 @@ const AuthForm = ({ type }: { type: string }) => {
   )
 }
 const BottomGradient = () => {
-    return (
-        <>
-            <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-            <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
-        </>
-    );
+  return (
+    <>
+      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+    </>
+  );
 };
 export default AuthForm
