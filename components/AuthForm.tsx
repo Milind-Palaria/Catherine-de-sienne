@@ -104,19 +104,22 @@ const AuthForm = ({ type }: { type: string }) => {
         </div>
       </header>
       {user ? (
-         <div className="flex flex-col gap-2">
-         <PlaidLink user={user} variant="primary" />
-         <div className="flex flex-col gap-2 pt-4 items-center text-center">
- 
-         {/* <h1 className='text-24 md:text-28'>Warning: This Project is in Sandbox mode</h1> */}
-         <h3 className='text-sm md:text-20 opacity-90'>While connecting use these credentials :</h3>
-         <h1 className='text-12 md:text-20 pt-2 md:pt-3'><span className=' opacity-80'>Username :</span> user_good </h1>
-         <h1 className='text-12 md:text-20'><span className=' opacity-80'>Password : </span>pass_good </h1>
- 
-         </div>
-       </div>
+        <div className="flex flex-col gap-2">
+          <PlaidLink user={user} variant="primary" />
+          <div className="flex flex-col gap-2 pt-4 items-center text-center">
+            <h1 className='text-16 md:text-26'>Caution:</h1>
+            {/* <h1 className='text-24 md:text-28'>Warning: This Project is in Sandbox mode</h1> */}
+            <h3 className='text-12 md:text-14 opacity-90'>While connecting use these credentials :</h3>
+            <h1 className='text-16 md:text-20'><span className=' opacity-80 underline'>Username</span> : user_good </h1>
+            <h1 className='text-16 md:text-20'><span className=' opacity-80 underline'>Password</span> : pass_good </h1>
+
+            <p className='text-10 md:text-[14px] opacity-90 pt-2 md:pt-3 '>keep clicking next on mobile & otp.</p>
+            <p className='text-10 md:text-[14px] opacity-90'>select any type of bank account and agree to terms.</p>
+            <p className='pb-0 pt-5 text-18'>This Project is in < span className='underline'> Sandbox Mode</span>.</p>
+
+          </div>
+        </div>
       ) : (
-      
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
@@ -132,24 +135,24 @@ const AuthForm = ({ type }: { type: string }) => {
                     <CustomInput control={form.control} name='city' label="City" placeholder='Enter your city' validStates={validStates} />
                   </div>
                   {/* <div className=' flex flex-wrap flex-col justify-center items-center gap-3 w-full p-3 bg-blue-600/50 rounded-lg '>
-                  <h1>Valid US State Codes </h1>
-                 <div className='flex flex-wrap  gap-2 justify-center items-center bg-white'>
+                <h1>Valid US State Codes </h1>
+               <div className='flex flex-wrap  gap-2 justify-center items-center bg-white'>
 
-                  --  {validStates.map((data) => (<span>{data} -- </span> ))}
-                 </div>
-                    </div> */}
+                --  {validStates.map((data) => (<span>{data} -- </span> ))}
+               </div>
+                  </div> */}
                   <div className="flex gap-2">
                     <CustomInput control={form.control} name='state' label="State" placeholder='Enter a US state' validStates={validStates} />
                     {/* <div>
-                      <label htmlFor="state">Select your state:</label>
-                      <select id="state" value={selectedState} onChange={handleChange}>
-                        {validStates.map((state) => (
-                          <option key={state.abbreviation} value={state.abbreviation}>
-                            {state.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div> */}
+                    <label htmlFor="state">Select your state:</label>
+                    <select id="state" value={selectedState} onChange={handleChange}>
+                      {validStates.map((state) => (
+                        <option key={state.abbreviation} value={state.abbreviation}>
+                          {state.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div> */}
                     <CustomInput control={form.control} name='postalCode' label="Postal Code" placeholder='Enter 5 digit zipcode' validStates={validStates} />
                   </div>
                   <div className="flex gap-2">
@@ -191,6 +194,7 @@ const AuthForm = ({ type }: { type: string }) => {
             </Link>
           </footer>
         </>
+
       )}
     </section>
   )
