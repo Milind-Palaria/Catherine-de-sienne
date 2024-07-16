@@ -15,16 +15,21 @@ export default async function RootLayout({
   if(!loggedIn) redirect('/welcome')
 
   return (
-    <main className="flex h-screen w-full font-inter">
-      <Sidebar user={loggedIn} />
-
-      <div className="flex size-full flex-col">
-        <div className="root-layout">
+    <main className="flex h-screen w-full font-secondary">
+      {/* <Sidebar user={loggedIn} /> */}
+      {/* <div>
           <Image src="/icons/cathedral-logo.png" width={30} height={30} alt="logo" />
           <div>
             <MobileNav user={loggedIn} />
           </div>
-        </div>
+        </div> */}
+      <div className="flex size-full flex-col">
+        {/* <div className="root-layout">
+          <Image src="/icons/cathedral-logo.png" width={30} height={30} alt="logo" />
+          <div>
+            <MobileNav user={loggedIn} />
+          </div>
+        </div> */}
         {children}
       </div>
     </main>

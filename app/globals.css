@@ -130,15 +130,15 @@
   }
 
   .home-content {
-    @apply no-scrollbar flex w-full flex-1 flex-col gap-8 px-5 sm:px-8 py-7 lg:py-12 xl:max-h-screen xl:overflow-y-scroll;
+    @apply no-scrollbar flex w-full flex-1 flex-col gap-8  px-0 sm:px-0 py-0 lg:py-0 xl:max-h-screen xl:overflow-y-scroll;
   }
 
   .home-header {
-    @apply flex flex-col justify-between gap-8;
+    @apply flex flex-col justify-between items-center gap-8;
   }
 
   .total-balance {
-    @apply flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-chart sm:gap-6 sm:p-6;
+    @apply flex w-1/2 flex-col items-center gap-4 rounded-xl p-4 shadow-chart sm:gap-6 sm:p-6 bg-[#000]/20 backdrop-blur-lg border border-white;
   }
 
   .total-balance-chart {
@@ -229,15 +229,15 @@
   }
 
   .header-box {
-    @apply flex flex-col gap-1;
+    @apply flex flex-col gap-1 justify-center items-center text-center;
   }
 
   .header-box-title {
-    @apply text-24 lg:text-30 font-semibold text-gray-900;
+    @apply text-[8vw] md:text-[6vw] font-thin text-white/80;
   }
 
   .header-box-subtext {
-    @apply text-14 lg:text-16 font-semibold text-gray-600;
+    @apply text-[4vw] md:text-[2vw] font-thin text-white/80;
   }
 
   /* Bank Card */

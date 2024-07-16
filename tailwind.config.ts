@@ -32,7 +32,7 @@ const config = {
         fill: {
           1: "rgba(255, 255, 255, 0.10)",
         },
-        bankGradient: "#0179FE",
+        bankGradient: "#18181b",
         backgroundImage: {
           'custom-gradient': 'linear-gradient(180.2deg, #785589 -6.9%, #23091F 76.7%)',
         },
@@ -82,6 +82,7 @@ const config = {
         },
       },
       backgroundImage: {
+        // "bank-gradient": "linear-gradient(90deg, #18181b 0%, #rgb(24 24 27 / 0)  100%)",
         "bank-gradient": "linear-gradient(90deg, #0179FE 0%, #4893FF 100%)",
         "gradient-mesh": "url('/icons/gradient-mesh.svg')",
         "bank-green-gradient":

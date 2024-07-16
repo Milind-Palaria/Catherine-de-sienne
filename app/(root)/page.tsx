@@ -5,15 +5,18 @@ import RightSidebar from '@/components/RightSidebar';
 import { getLoggedInUser } from '@/lib/actions/user.actions';
 import { getAccount, getAccounts } from '@/lib/actions/bank.actions';
 import RecentTransactions from '@/components/RecentTransactions';
+import DotPattern from '@/components/magicui/dot-pattern';
+import { cn } from '@/lib/utils';
+import { LampDemo } from '@/components/LampDemo';
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   // const loggedIn = { firstName: 'Milind', lastName: 'Palaria', email: 'palaria23@gmail.com' };
   const currentPage = Number(page as string) || 1;
-  const loggedIn= await getLoggedInUser();
-  const accounts = await getAccounts({ 
-    userId: loggedIn.$id 
+  const loggedIn = await getLoggedInUser();
+  const accounts = await getAccounts({
+    userId: loggedIn.$id
   })
 
-  if(!accounts) return;
+  if (!accounts) return;
 
   const accountsData = accounts?.data;
   const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
@@ -26,35 +29,43 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   // })
 
   return (
-      <div>
-            {/* <MainHero/> */}
-    <section className="home">
-      <div className="home-content">
-        <header className="home-header">
-          <HeaderBox 
-            type="greeting"
-            title="Welcome"
-            user={loggedIn?.firstName || 'Guest'}
-            subtext="Access and manage your account and transactions efficiently."
-          />
-            <TotalBalanceBox 
-             accounts={accountsData}
-            totalBanks={accounts?.totalBanks}
-            totalCurrentBalance={accounts?.totalCurrentBalance}
-          />
-        </header>
-        <RecentTransactions 
-          accounts={accountsData}
-          transactions={account?.transactions}
-          appwriteItemId={appwriteItemId}
-          page={currentPage}
+    <div>
+      {/* <MainHero/> */}
+      <section className="home h-screen relative bg-[#0D090A] !overflow-hidden">
+        <DotPattern
+          className={cn(
+            "[mask-image:radial-gradient(70vh_circle_at_center,white,transparent)] !z-0",
+            "md:[mask-image:radial-gradient(45vh_circle_at_center,white,transparent)] !z-0"
+          )}
         />
-      </div>
-      <RightSidebar 
-        user={loggedIn}
-        transactions={accounts?.transactions}
-        banks={accountsData?.slice(0, 2)}
-      />
+        <div className="home-content">
+          <header className="home-header">
+            <LampDemo/>
+            <HeaderBox
+              type="greeting"
+              title="Welcome"
+              user={loggedIn?.firstName || 'Guest'}
+              subtext="Access and manage your account and transactions efficiently."
+            />
+
+            {/* <TotalBalanceBox
+              accounts={accountsData}
+              totalBanks={accounts?.totalBanks}
+              totalCurrentBalance={accounts?.totalCurrentBalance}
+            /> */}
+          </header>
+          {/* <RecentTransactions
+            accounts={accountsData}
+            transactions={account?.transactions}
+            appwriteItemId={appwriteItemId}
+            page={currentPage}
+          /> */}
+        </div>
+        {/* <RightSidebar
+          user={loggedIn}
+          transactions={accounts?.transactions}
+          banks={accountsData?.slice(0, 2)}
+        /> */}
       </section>
     </div>
   )
