@@ -8,7 +8,12 @@ export default function ClientComponent({ children }: { children: React.ReactNod
   const [loading, setLoading] = useState(false);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
-
+    // useEffect(() => {
+    //   const loader = document.getElementById('globalLoader');
+    //   if (loader) {
+    //     loader.style.display = 'none';
+    //   }
+    // }, []);
   useEffect(() => {
     if (pathname !== prevPathname) {
       setLoading(true);
