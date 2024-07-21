@@ -40,7 +40,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
         />
         <div className="home-content">
           <header className="home-header">
-            <LampDemo/>
+            <LampDemo user={loggedIn?.firstName || 'Guest'}/>
             <HeaderBox
               type="greeting"
               title="Welcome"
