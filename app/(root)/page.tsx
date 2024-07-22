@@ -31,7 +31,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   return (
     <div>
       {/* <MainHero/> */}
-      <section className="home h-screen relative bg-[#0D090A] !overflow-hidden">
+      <section className="home h-[200vh] relative bg-[#0D090A] !overflow-hidden">
         <DotPattern
           className={cn(
             "[mask-image:radial-gradient(70vh_circle_at_center,white,transparent)] !z-0",
@@ -41,12 +41,12 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
         <div className="home-content">
           <header className="home-header">
             <LampDemo user={loggedIn?.firstName || 'Guest'}/>
-            <HeaderBox
+            {/* <HeaderBox
               type="greeting"
               title="Welcome"
               user={loggedIn?.firstName || 'Guest'}
               subtext="Access and manage your account and transactions efficiently."
-            />
+            /> */}
 
             {/* <TotalBalanceBox
               accounts={accountsData}
