@@ -1,11 +1,24 @@
+"use client"
+import { useEffect, useState } from 'react';
 import AnimatedCounter from './AnimatedCounter';
 import DoughnutChart from './DoughnutChart';
 
 const TotalBalanceBox = ({
   accounts = [], totalBanks, totalCurrentBalance
 }: TotalBalanceBoxProps) => {
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section className="total-balance">
+    <section className={`total-balance transition-opacity duration-1000 ${isVisible ? 'opacity-80 block' : 'opacity-0 hidden'} `}>
       <div className="total-balance-chart">
         <DoughnutChart accounts={accounts} />
       </div>
@@ -19,7 +32,7 @@ const TotalBalanceBox = ({
             Total Current Balance
           </p>
 
-          <div className="total-balance-amount flex-center gap-2">
+          <div className="total-balance-amount flex-center gap-2 ">
             <AnimatedCounter amount={totalCurrentBalance} />
           </div>
         </div>

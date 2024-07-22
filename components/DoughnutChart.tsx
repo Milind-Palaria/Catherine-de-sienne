@@ -17,7 +17,9 @@ const DoughnutChart = ({ accounts }: DoughnutChartProps) => {
       {
         label: 'Banks',
         data: balances,
-        backgroundColor: ['#BA1200', '#2265d8', '#2f91fa'] 
+        backgroundColor: ['rgba(0, 255, 255, 0.7)', 'rgba(0, 229, 229, 0.7)', 'rgba(0, 204, 204, 0.7)'] ,
+        hoverBackgroundColor: ['rgba(0, 255, 255, 0.99)', 'rgba(0, 229, 229, 0.99)', 'rgba(0, 204, 204, 0.99)'],
+        hoverBorderColor:'rgba(0,0,0,0.4)',
       }
     ],
     labels: accountNames,
@@ -26,7 +28,13 @@ const DoughnutChart = ({ accounts }: DoughnutChartProps) => {
   return <Doughnut 
     data={data} 
     options={{
-      cutout: '60%',
+      animation: {
+        delay: 6500, // Delay before the animation starts (in milliseconds)
+        duration: 1000, // Duration of the animation (in milliseconds)
+        easing: 'easeInOutQuad', // Easing function to use
+      },
+
+      cutout: '50%',
       plugins: {
         legend: {
           display: false
