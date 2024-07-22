@@ -31,7 +31,7 @@ export function LampDemo({ user }: UserProp) {
   return (
     <LampContainer>
       <motion.h1
-         initial={isMobile?{ opacity: 0.5, y: -200 }: {opacity: 0.5, y: 0 }}
+         initial={isMobile?{ opacity: 0, y: -200 }: {opacity: 0.5, y: 0 }}
         animate={controls}
         transition={{
           delay: 2,

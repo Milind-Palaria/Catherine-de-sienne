@@ -4,6 +4,7 @@ import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
 
 import Image from "next/image";
+import { MainSidebarComponent } from "@/components/MainSidebarComponent";
 
 export default async function RootLayout({
   children,
@@ -16,6 +17,7 @@ export default async function RootLayout({
 
   return (
     <main className="flex h-screen w-full font-secondary">
+
       {/* <Sidebar user={loggedIn} /> */}
       {/* <div>
           <Image src="/icons/cathedral-logo.png" width={30} height={30} alt="logo" />
@@ -24,6 +26,7 @@ export default async function RootLayout({
           </div>
         </div> */}
       <div className="flex size-full flex-col">
+
         {/* <div className="root-layout">
           <Image src="/icons/cathedral-logo.png" width={30} height={30} alt="logo" />
           <div>

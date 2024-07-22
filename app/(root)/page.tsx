@@ -8,6 +8,7 @@ import RecentTransactions from '@/components/RecentTransactions';
 import DotPattern from '@/components/magicui/dot-pattern';
 import { cn } from '@/lib/utils';
 import { LampDemo } from '@/components/LampDemo';
+import { MainSidebarComponent } from '@/components/MainSidebarComponent';
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   // const loggedIn = { firstName: 'Milind', lastName: 'Palaria', email: 'palaria23@gmail.com' };
   const currentPage = Number(page as string) || 1;
@@ -30,6 +31,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
 
   return (
     <div>
+
       {/* <MainHero/> */}
       <section className="home h-[200vh] relative bg-[#0D090A] !overflow-hidden">
         <DotPattern
@@ -38,6 +40,8 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
             "md:[mask-image:radial-gradient(45vh_circle_at_center,white,transparent)] !z-0"
           )}
         />
+      <MainSidebarComponent/>
+
         <div className="home-content">
           <header className="home-header">
             <LampDemo user={loggedIn?.firstName || 'Guest'}/>
