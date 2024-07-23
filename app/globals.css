@@ -132,7 +132,7 @@
   }
 
   .home-content {
-    @apply no-scrollbar flex w-full flex-1 flex-col gap-8  px-0 sm:px-0 py-0 lg:py-0 xl:max-h-screen xl:overflow-y-scroll;
+    @apply no-scrollbar flex w-full flex-1 flex-col gap-8  px-0 sm:px-0 py-0 lg:py-0;
   }
 
   .home-header {
@@ -140,7 +140,7 @@
   }
 
   .total-balance {
-    @apply flex w-[62vw] md:w-[25vw] flex-col relative top-[25vh] md:top-[30vh] items-center gap-4 rounded-xl p-4 shadow-chart sm:gap-6 sm:p-6 bg-[#000]/20 backdrop-blur-lg border border-white;
+    @apply flex w-[62vw] md:w-[25vw] flex-col relative top-[25vh] md:top-[30vh] items-center gap-2 p-4 shadow-chart sm:gap-6 sm:p-6;
   }
 
   .total-balance-chart {
