@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 import { LampDemo } from '@/components/LampDemo';
 import { MainSidebarComponent } from '@/components/MainSidebarComponent';
 import { Landing } from '@/components/Landing';
+import { NavigatingCards } from '@/components/NavigatingCards';
 // import Landing from '@/components/Landing';
 // import { Landing } from '@/components/Landing';
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
@@ -36,7 +37,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
     <div>
 
       {/* <MainHero/> */}
-      <section className="home min-h-[100vh] pb-10 relative bg-[#0D090A] !overflow-hidden">
+      <section className="home min-h-[100vh] pb-10 relative bg-[#0D090A] md:!overflow-hidden">
         <DotPattern
           className={cn(
             "[mask-image:radial-gradient(70vh_circle_at_center,white,transparent)] !z-0",
@@ -66,7 +67,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
           totalBanks={accounts?.totalBanks}
           totalCurrentBalance={accounts?.totalCurrentBalance}
           />
-
+<NavigatingCards/>
           {/* <RecentTransactions
             accounts={accountsData}
             transactions={account?.transactions}
