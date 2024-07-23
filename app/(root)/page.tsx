@@ -11,6 +11,7 @@ import { LampDemo } from '@/components/LampDemo';
 import { MainSidebarComponent } from '@/components/MainSidebarComponent';
 import { Landing } from '@/components/Landing';
 import { NavigatingCards } from '@/components/NavigatingCards';
+import { FeaturesSection } from '@/components/FeaturesSection';
 // import Landing from '@/components/Landing';
 // import { Landing } from '@/components/Landing';
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
@@ -63,11 +64,12 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
             /> */}
           </header>
           <Landing
-          accountsData={accountsData}
-          totalBanks={accounts?.totalBanks}
-          totalCurrentBalance={accounts?.totalCurrentBalance}
+            accountsData={accountsData}
+            totalBanks={accounts?.totalBanks}
+            totalCurrentBalance={accounts?.totalCurrentBalance}
           />
-<NavigatingCards/>
+          <NavigatingCards />
+          <FeaturesSection/>
           {/* <RecentTransactions
             accounts={accountsData}
             transactions={account?.transactions}
