@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   IconArrowLeft,
   IconBrandTabler,
@@ -11,39 +11,50 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
+import ConnectingBankButton from "./ConnectingBankButton";
 
 export function MainSidebarComponent() {
+  const [open, setOpen] = useState(false);
+  const connectingBankButtonRef = useRef(null);
+
+  const handleClick = () => {
+    if (connectingBankButtonRef.current) {
+      connectingBankButtonRef.current.clickButton();
+    }
+  };
+
   const links = [
     {
-      label: "Dashboard",
-      href: "#",
+      label: "My Banks",
+      href: "/my-banks",
       icon: (
         <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Profile",
-      href: "#",
+      label: "Transfer Payment",
+      href: "/payment-transfer",
       icon: (
         <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Settings",
-      href: "#",
+      label: "Transaction History",
+      href: "/transaction-history",
       icon: (
         <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Logout",
+      label: "Connect Bank +",
       href: "#",
       icon: (
         <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
+      onClick: handleClick,
     },
   ];
-  const [open, setOpen] = useState(false);
+
   return (
     <div
       className={cn(
@@ -56,7 +67,13 @@ export function MainSidebarComponent() {
             {open ? <Logo /> : <LogoIcon />}
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
-                <SidebarLink key={idx} link={link} />
+                <div
+                  key={idx}
+                  onClick={link.onClick}
+                  className="cursor-pointer"
+                >
+                  <SidebarLink link={link} />
+                </div>
               ))}
             </div>
           </div>
@@ -79,23 +96,25 @@ export function MainSidebarComponent() {
           </div>
         </SidebarBody>
       </Sidebar>
-      {/* <Dashboard /> */}
+      {/* Render ConnectingBankButton in hidden state */}
+      <ConnectingBankButton ref={connectingBankButtonRef} />
     </div>
   );
 }
+
 export const Logo = () => {
   return (
     <Link
       href="#"
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
-         <Image
-                    src="/images/castle1.jpg"
-                    className="h-7 w-7 flex-shrink-0 rounded-full"
-                    width={50}
-                    height={50}
-                    alt="Avatar"
-                  />
+      <Image
+        src="/images/castle1.jpg"
+        className="h-7 w-7 flex-shrink-0 rounded-full"
+        width={50}
+        height={50}
+        alt="Avatar"
+      />
       <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
       <motion.span
         initial={{ opacity: 0 }}
@@ -107,21 +126,20 @@ export const Logo = () => {
     </Link>
   );
 };
+
 export const LogoIcon = () => {
   return (
     <Link
       href="#"
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
-      
       <Image
-                    src="/images/castle1.jpg"
-                    className="h-7 w-7 flex-shrink-0 rounded-full"
-                    width={50}
-                    height={50}
-                    alt="Avatar"
-                  />
-      
+        src="/images/castle1.jpg"
+        className="h-7 w-7 flex-shrink-0 rounded-full"
+        width={50}
+        height={50}
+        alt="Avatar"
+      />
     </Link>
   );
 };

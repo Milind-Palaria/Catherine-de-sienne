@@ -4,7 +4,7 @@ import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
 
 import Image from "next/image";
-import { MainSidebarComponent } from "@/components/MainSidebarComponent";
+// import { MainSidebarComponent } from "@/components/MainSidebarComponent";
 
 export default async function RootLayout({
   children,
@@ -12,6 +12,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const loggedIn = await getLoggedInUser();
+  // console.log(loggedIn)
 
   if(!loggedIn) redirect('/welcome')
 
