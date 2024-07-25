@@ -26,8 +26,7 @@ declare type User = {
 const ConnectingBankButton = forwardRef((props, ref) => {
   const router = useRouter();
   const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<User | null>(null);
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useImperativeHandle(ref, () => ({
     clickButton() {
@@ -38,41 +37,43 @@ const ConnectingBankButton = forwardRef((props, ref) => {
   }));
 
   useEffect(() => {
-    const gettingUser = async () => {
-      const loggedIn = await getLoggedInUser();
-      setUser(loggedIn);
-    };
-    gettingUser();
-  }, []);
-
-  useEffect(() => {
-    const getLinkToken = async () => {
-      if (user) {
-        const data = await createLinkToken(user);
-        setToken(data?.linkToken);
+    const fetchUserAndToken = async () => {
+      try {
+        const loggedInUser = await getLoggedInUser();
+        if (loggedInUser) {
+          const tokenData = await createLinkToken(loggedInUser);
+          setToken(tokenData?.linkToken);
+        }
+      } catch (error) {
+        console.error('Error fetching user or token:', error);
       }
     };
-    getLinkToken();
-  }, [user]);
+    fetchUserAndToken();
+  }, []);
 
   const onSuccess = useCallback<PlaidLinkOnSuccess>(async (public_token: string) => {
-    if (user) {
-      await exchangePublicToken({
-        publicToken: public_token,
-        user,
-      });
-      router.push('/');
+    try {
+      const user = await getLoggedInUser();
+      if (user) {
+        await exchangePublicToken({
+          publicToken: public_token,
+          user,
+        });
+        router.push('/');
+      }
+    } catch (error) {
+      console.error('Error exchanging public token:', error);
     }
-  }, [user, router]);
+  }, [router]);
 
-  const config: PlaidLinkOptions = {
+  const config: PlaidLinkOptions = useMemo(() => ({
     token: token || '',
     onSuccess,
-  };
+  }), [token, onSuccess]);
 
   const { open, ready } = usePlaidLink(config);
 
-  return (
+  return token ? (
     <div style={{ display: 'none' }}>
       <Button ref={buttonRef} onClick={() => open()} className="plaidlink-default" disabled={!ready}>
         <Image
@@ -84,7 +85,9 @@ const ConnectingBankButton = forwardRef((props, ref) => {
         <p className='text-[16px] font-semibold text-black-2'>Connect</p>
       </Button>
     </div>
-  );
+  ) : null;
 });
+
+ConnectingBankButton.displayName = 'ConnectingBankButton';
 
 export default ConnectingBankButton;
