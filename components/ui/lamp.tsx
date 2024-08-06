@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useMediaQuery } from "react-responsive";
 
 export function LampDemo() {
+  
   return (
     <LampContainer>
       <motion.h1
@@ -29,6 +31,17 @@ export const LampContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
+  const controls = useAnimation();
+  // const controls2 = useAnimation();
+
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  useEffect(() => {
+    if (isMobile) {
+      controls.start({ y: "-77vh" });
+    } else {
+      controls.start({ y: "-73.5vh" });
+    }
+  }, [controls, isMobile]);
   return (
     <div
       className={cn(
@@ -36,7 +49,7 @@ export const LampContainer = ({
         className
       )}
     >
-      <div className="relative flex w-full flex-1  scale-y-[4.25] items-center justify-center isolate z-0 ">
+      <div className="relative flex w-full flex-1 scale-y-[4.25] items-center justify-center isolate z-0 ">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "30rem" }}
@@ -45,11 +58,10 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          
           className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-cyan-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
-          <div className="absolute  w-[100%] left-0 bg-slate-950/0 h-40 bottom-0 z-20 " />
-          <div className="absolute  w-40 h-[100%] left-0 bg-slate-950/0  bottom-0 z-20 " />
+          <div className="absolute w-[100%] left-0 bg-slate-950/0 h-40 bottom-0 z-20 " />
+          <div className="absolute w-40 h-[100%] left-0 bg-slate-950/0 bottom-0 z-20 " />
         </motion.div>
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
@@ -59,11 +71,10 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          
           className="absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-cyan-500 text-white [--conic-position:from_290deg_at_center_top]"
         >
-          <div className="absolute  w-40 h-[100%] right-0 bg-slate-950/0  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
-          <div className="absolute  w-[100%] right-0 bg-slate-950/0 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+          <div className="absolute w-40 h-[100%] right-0 bg-slate-950/0 bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
+          <div className="absolute w-[100%] right-0 bg-slate-950/0 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
         </motion.div>
         <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-slate-950/0 blur-3xl"></div>
         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
@@ -92,9 +103,18 @@ export const LampContainer = ({
         <div className="absolute inset-auto z-40 h-0 w-full -translate-y-[12.5rem] bg-slate-950/0 "></div>
       </div>
 
-      <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
+      <motion.div
+        initial={{ y: "-35vh" }}
+        animate={controls}
+        transition={{
+          delay: 0.5,
+          duration: 1,
+          ease: "easeInOut",
+        }}
+        className="relative z-50 flex flex-col items-center px-5"
+      >
         {children}
-      </div>
+      </motion.div>
     </div>
   );
 };

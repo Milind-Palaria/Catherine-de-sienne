@@ -13,25 +13,26 @@ export function LampDemo({ user }: UserProp) {
   const controls2 = useAnimation();
 
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  useEffect(() => {
+    if (isMobile) {
+      controls.start({ opacity: 0.8, y: 0 });
+    } else {
+      controls.start({ opacity: 0.8, y: 0 });
+    }
+  }, [controls, isMobile]);
 
   useEffect(() => {
     if (isMobile) {
-      controls.start({ opacity: 0.8, y: -400 });
+      controls2.start({ opacity: 0.7, y: 0 });
     } else {
-      controls.start({ opacity: 0.8, y: -250 });
-    }
-  }, [controls, isMobile]);
-  useEffect(() => {
-    if (isMobile) {
-      controls2.start({ opacity: 0.7, y: -400 });
-    } else {
-      controls2.start({ opacity: 0.7, y: -250 });
+      controls2.start({ opacity: 0.7, y: 0 });
     }
   }, [controls2, isMobile]);
+
   return (
     <LampContainer>
       <motion.h1
-         initial={isMobile?{ opacity: 0, y: -200 }: {opacity: 0.5, y: 0 }}
+        initial={isMobile ? { opacity: 0.5, y: 0 } : { opacity: 0.5, y: 0 }}
         animate={controls}
         transition={{
           delay: 2,
@@ -43,7 +44,7 @@ export function LampDemo({ user }: UserProp) {
         Welcome {user}
       </motion.h1>
       <motion.h1
-        initial={isMobile?{ opacity: 0, y: -400 }: {opacity: 0, y: -250 }}
+        initial={isMobile ? { opacity: 0, y: 0 } : { opacity: 0, y: 0 }}
         animate={controls2}
         transition={{
           delay: 3,
