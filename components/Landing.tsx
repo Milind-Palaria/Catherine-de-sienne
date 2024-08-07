@@ -49,7 +49,7 @@ export function Landing({ accountsData, totalBanks, totalCurrentBalance }: Landi
                     </FeatureCard>
                     <FeatureCard
                         key="Deploy in seconds"
-                        className={`p-4 max-md:pt-16 sm:p-8 border-b lg:border-none overflow-hidden`}
+                        className={`p-4 max-md:pt-0 sm:p-8 border-b lg:border-none overflow-hidden max-md:-translate-y-[6rem]`}
                     >
                         <FeatureTitle>Transfer in seconds</FeatureTitle>
                         <FeatureDescription>
