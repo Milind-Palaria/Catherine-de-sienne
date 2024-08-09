@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import ClientComponent from './ClientComponent';
-// import ClientComponent from './ClientComponent';
 
 export default function ClientWrapper({
   children,
@@ -12,12 +11,19 @@ export default function ClientWrapper({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 8000); // Adjust the delay as necessary
+    const handleLoad = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    };
 
-    return () => clearTimeout(timer);
+    // Add event listener to the window's load event
+    window.addEventListener('load', handleLoad);
+
+    // Cleanup the event listener
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
   }, []);
 
   if (loading) {
@@ -51,5 +57,5 @@ export default function ClientWrapper({
     );
   }
 
-  return <>{children}</>;
+  return <ClientComponent>{children}</ClientComponent>;
 }

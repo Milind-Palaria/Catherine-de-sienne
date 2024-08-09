@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import ClientWrapper from '@/components/ClientWrapper';
-import ClientComponent from '@/components/ClientComponent';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
@@ -18,12 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-primary">
-        <ClientWrapper>
-          <ClientComponent>
-
-          {children}
-          </ClientComponent>
-          </ClientWrapper>
+        <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
   );
