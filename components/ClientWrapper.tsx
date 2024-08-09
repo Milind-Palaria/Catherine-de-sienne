@@ -14,13 +14,15 @@ export default function ClientWrapper({
     const handleLoad = () => {
       setTimeout(() => {
         setLoading(false);
-      }, 500);
+      }, 5000);
     };
 
-    // Add event listener to the window's load event
-    window.addEventListener('load', handleLoad);
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
 
-    // Cleanup the event listener
     return () => {
       window.removeEventListener('load', handleLoad);
     };
