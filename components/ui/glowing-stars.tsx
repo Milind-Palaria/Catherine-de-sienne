@@ -22,7 +22,7 @@ export const GlowingStarsBackgroundCard = ({
         setMouseEnter(false);
       }}
       className={cn(
-        "bg-[linear-gradient(110deg,#333_0.6%,#222)] p-4 max-w-2xl max-h-[18.5rem] h-full w-full rounded-sm border border-neutral-600 opacity-80",
+        "bg-neutral-800 hover:bg-neutral-950 p-1 max-w-2xl max-h-[18.5rem] h-full w-full rounded-sm border border-neutral-600 opacity-80 duration-100",
         className
       )}
     >
@@ -126,7 +126,7 @@ const Star = ({ isGlowing, delay }: { isGlowing: boolean; delay: number }) => {
         background: isGlowing ? "#fff" : "#666",
       }}
       transition={{
-        duration: 2,
+        duration: 0.2,
         ease: "easeInOut",
         delay: delay,
       }}
@@ -145,7 +145,7 @@ const Glow = ({ delay }: { delay: number }) => {
         opacity: 1,
       }}
       transition={{
-        duration: 2,
+        duration: 0.2,
         ease: "easeInOut",
         delay: delay,
       }}

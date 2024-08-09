@@ -25,7 +25,7 @@ export function NavigatingCards() {
           <GlowingStarsTitle>My Banks</GlowingStarsTitle>
           <div className="flex justify-between items-end">
             <GlowingStarsDescription>
-              The power of full-stack to the frontend. Read the release notes.
+            View and manage all connected bank accounts in one location.
             </GlowingStarsDescription>
             <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
               <Icon />
@@ -38,7 +38,7 @@ export function NavigatingCards() {
           <GlowingStarsTitle>Transfer Payments</GlowingStarsTitle>
           <div className="flex justify-between items-end">
             <GlowingStarsDescription>
-              The power of full-stack to the frontend. Read the release notes.
+            Swiftly transfer funds between your linked bank accounts with ease.
             </GlowingStarsDescription>
             <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
               <Icon />
@@ -51,7 +51,7 @@ export function NavigatingCards() {
           <GlowingStarsTitle>Transaction History</GlowingStarsTitle>
           <div className="flex justify-between items-end">
             <GlowingStarsDescription>
-              The power of full-stack to the frontend. Read the release notes.
+            Access comprehensive & detailed transaction records for all accounts.
             </GlowingStarsDescription>
             <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
               <Icon />
@@ -64,7 +64,7 @@ export function NavigatingCards() {
           <GlowingStarsTitle>Connect Banks</GlowingStarsTitle>
           <div className="flex justify-between items-end">
             <GlowingStarsDescription>
-              The power of full-stack to the frontend. Read the release notes.
+            Effortlessly connect & manage multiple accounts in one unified platform.
             </GlowingStarsDescription>
             <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
               <Icon />
