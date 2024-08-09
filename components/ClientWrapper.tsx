@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ClientComponent from './ClientComponent';
 
 export default function ClientWrapper({
   children,
@@ -68,7 +69,9 @@ export default function ClientWrapper({
       )}
 
       <div style={{ visibility: loading ? 'hidden' : 'visible' }}>
-        {children}
+        <ClientComponent>
+            {children}
+        </ClientComponent>
       </div>
     </div>
   );
