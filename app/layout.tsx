@@ -1,8 +1,7 @@
-// app/layout.tsx
 import type { Metadata } from 'next';
 import './globals.css';
-import ClientComponent from '../components/ClientComponent';
-import { useEffect } from 'react';
+import ClientWrapper from '@/components/ClientWrapper';
+import ClientComponent from '@/components/ClientComponent';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
@@ -16,14 +15,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
-
   return (
     <html lang="en">
       <body className="font-primary">
-        <ClientComponent>
+        <ClientWrapper>
+          <ClientComponent>
+
           {children}
-        </ClientComponent>
+          </ClientComponent>
+          </ClientWrapper>
       </body>
     </html>
   );
