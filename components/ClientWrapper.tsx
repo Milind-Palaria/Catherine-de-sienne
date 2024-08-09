@@ -11,12 +11,14 @@ export default function ClientWrapper({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const handleLoad = () => {
-      setTimeout(() => {
-        setLoading(false);
-      }, 5000);
-    };
+    const stopLoader = () => setLoading(false);
 
+    const maxLoadTime = setTimeout(stopLoader, 10000);
+
+    const handleLoad = () => {
+      clearTimeout(maxLoadTime);
+      setTimeout(stopLoader, 5000);
+    };
     if (document.readyState === 'complete') {
       handleLoad();
     } else {
@@ -24,6 +26,7 @@ export default function ClientWrapper({
     }
 
     return () => {
+      clearTimeout(maxLoadTime);
       window.removeEventListener('load', handleLoad);
     };
   }, []);
