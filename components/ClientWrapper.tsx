@@ -16,7 +16,7 @@ export default function ClientWrapper({
     const maxLoadTime = setTimeout(stopLoader, 10000);
     const handleLoad = () => {
       clearTimeout(maxLoadTime);
-      setTimeout(stopLoader, 5000);
+      setTimeout(stopLoader, 0);
     };
 
     if (document.readyState === 'complete') {
