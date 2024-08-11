@@ -1,3 +1,4 @@
+import AnimatedTransferForm from '@/components/AnimatedTransferForm';
 import HeaderBox from '@/components/HeaderBox'
 import DotPattern from '@/components/magicui/dot-pattern';
 import { MainSidebarComponent } from '@/components/MainSidebarComponent';
@@ -48,7 +49,7 @@ const Transfer = async () => {
 
             <section className=" size-full pt-5">
 
-              <PaymentTransferForm accounts={accountsData} />
+            <AnimatedTransferForm accounts={accounts.data} />
             </section>
           </div>
           {/* <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[20vw] pb-7 ">
