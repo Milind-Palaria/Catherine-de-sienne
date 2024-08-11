@@ -129,11 +129,11 @@
 
   /* Home */
   .home {
-    @apply no-scrollbar flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
+    @apply no-scrollbar flex w-full flex-row max-xl:overflow-y-scroll;
   }
 
   .home-content {
-    @apply no-scrollbar flex w-full flex-1 flex-col gap-8  px-0 sm:px-0 py-0 lg:py-0;
+    @apply no-scrollbar flex w-full min-h-screen flex-1 flex-col gap-8  px-0 sm:px-0 py-0 lg:py-0;
   }
 
   .home-header {
