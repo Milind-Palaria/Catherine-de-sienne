@@ -95,7 +95,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(submit)} className="flex flex-col">
+      <form onSubmit={form.handleSubmit(submit)} className="flex flex-col bg-violet-500">
         <FormField
           control={form.control}
           name="senderBank"

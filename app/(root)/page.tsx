@@ -39,12 +39,14 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
 
       {/* <MainHero/> */}
       <section className="home min-h-[100vh] pb-10 relative bg-[#0D090A] md:!overflow-hidden max-md:px-4">
+        <div className='fixed '>
         <DotPattern
           className={cn(
             "[mask-image:radial-gradient(70vh_circle_at_center,white,transparent)] !z-0",
             "md:[mask-image:radial-gradient(45vh_circle_at_center,white,transparent)] !z-0"
           )}
         />
+          </div>
         <MainSidebarComponent />
 
         <div className="home-content">

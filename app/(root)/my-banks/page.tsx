@@ -42,12 +42,14 @@ const MyBanks = async () => {
     //   </div>
     // </section>
     <section className='home min-h-[100vh] relative bg-[#0D090A] max-md:px-4 !overflow-x-hidden'>
-      <DotPattern
-        className={cn(
-          "[mask-image:radial-gradient(70vh_circle_at_center,white,transparent)] !z-0",
-          "md:[mask-image:radial-gradient(45vh_circle_at_center,white,transparent)] !z-0"
-        )}
-      />
+      <div className='fixed '>
+        <DotPattern
+          className={cn(
+            "[mask-image:radial-gradient(70vh_circle_at_center,white,transparent)] !z-0",
+            "md:[mask-image:radial-gradient(45vh_circle_at_center,white,transparent)] !z-0"
+          )}
+        />
+          </div>
       <MainSidebarComponent />
       <div className="home-content">
         <header className="home-header">
