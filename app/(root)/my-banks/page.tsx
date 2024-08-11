@@ -52,7 +52,7 @@ const MyBanks = async () => {
           <MyBanksLamp user={loggedIn?.firstName || 'Guest'} />
 
           {/* <div className="mt-[25vh] md:mt-[30vh]"> */}
-          <div className="mt-[25vh] md:mt-[35vh] mx-[20vw] pb-9">
+          <div className="relative z-[2] mt-[25vh] md:mt-[35vh] mx-[20vw] pb-7 ">
 
             <h2 className="text-xl md:text-5xl text-[rgba(0,255,255,0.45)] font-medium font-secondary text-center mb-3">
               Your cards
