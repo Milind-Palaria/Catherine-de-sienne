@@ -96,7 +96,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(submit)} className="flex flex-col bg-[#000]/30 p-10 px-6 md:px-20 border border-white/60 backdrop-blur-sm rounded-md">
-      <h1 className="w-full text-center text-white text-3xl p-2">Transfer Details</h1>
+        <h1 className="w-full text-center text-white text-3xl p-2">Transfer Details</h1>
         <FormField
           control={form.control}
           name="senderBank"
@@ -157,7 +157,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
         />
 
         <div className="payment-transfer_form-details">
-        <h1 className="w-full text-center text-white text-3xl p-2">Recipient&apos;s Bank Details</h1>
+          <h1 className="w-full text-center text-white text-3xl p-2">Recipient&apos;s Bank Details</h1>
           <p className="w-full text-center text-white text-xl">
             Enter the bank account details of the recipient
           </p>
@@ -176,7 +176,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                   <FormControl>
                     <Input
                       placeholder="ex: milind@palaria.com"
-                      className="input-class bg-[#000]/40 text-white placeholder:text-white/60"
+                      className="input-class bg-[#000]/40 !text-white placeholder:text-white/60"
                       {...field}
                     />
                   </FormControl>
@@ -200,7 +200,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                   <FormControl>
                     <Input
                       placeholder="Enter the account address id"
-                      className="input-class  bg-[#000]/40 text-white placeholder:text-white/60"
+                      className="input-class  bg-[#000]/40 !text-white placeholder:text-white/60"
                       {...field}
                     />
                   </FormControl>
@@ -224,7 +224,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                   <FormControl>
                     <Input
                       placeholder="ex: 5.00 (enter decimals)"
-                      className="input-class  bg-[#000]/40 text-white placeholder:text-white/60"
+                      className="input-class  bg-[#000]/40 !text-white placeholder:text-white/60"
                       {...field}
                     />
                   </FormControl>
@@ -235,7 +235,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
           )}
         />
 
-        <div className="payment-transfer_btn-box">
+        {/* <div className="payment-transfer_btn-box">
           <Button type="submit" className="payment-transfer_btn">
             {isLoading ? (
               <>
@@ -245,10 +245,31 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
               "Transfer Funds"
             )}
           </Button>
+        </div> */}
+        <div className="flex flex-col gap-4">
+          <Button type="submit" disabled={isLoading} className="bg-gradient-to-br relative group/btn  from-zinc-900 to-zinc-900 block bg-zinc-800 text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]">
+            {isLoading ? (
+              <div className='relative'>
+                <Loader2 size={20} className="animate-spin" /> &nbsp;
+                <div className='-translate-y-10'>
+                  Loading...
+                </div>
+              </div>
+
+            ) : (<p>Transfer Funds →</p>)}
+            <BottomGradient />
+          </Button>
         </div>
       </form>
     </Form>
   );
 };
-
+const BottomGradient = () => {
+  return (
+    <>
+      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+    </>
+  );
+};
 export default PaymentTransferForm;

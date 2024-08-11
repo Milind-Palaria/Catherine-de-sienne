@@ -70,9 +70,9 @@ export const BankDropdown = ({
               className="cursor-pointer border-t"
             >
               <div className="flex flex-col ">
-                <p className="text-16 font-medium text-[#000]">{account.name}</p>
-                <p className="text-14 font-medium text-[#000]/80">
-                  {formatAmount(account.currentBalance)}
+                <p className="text-16 font-semibold text-[#000]">{account.name}</p>
+                <p className="text-14 font-semibold text-[#000]">
+                <span className="text-[#000]/60"> Balance : </span>{formatAmount(account.currentBalance)}
                 </p>
               </div>
             </SelectItem>
