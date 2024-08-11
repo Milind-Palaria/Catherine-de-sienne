@@ -84,7 +84,7 @@ export function MainSidebarComponent() {
                 href: "#",
                 icon: (
                   <Image
-                    src="/images/castle1.jpg"
+                    src="/pic.jpg"
                     className="h-7 w-7 flex-shrink-0 rounded-full"
                     width={50}
                     height={50}
@@ -109,7 +109,7 @@ export const Logo = () => {
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
       <Image
-        src="/images/castle1.jpg"
+        src="/pic.jpg"
         className="h-7 w-7 flex-shrink-0 rounded-full"
         width={50}
         height={50}
@@ -134,7 +134,7 @@ export const LogoIcon = () => {
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
       <Image
-        src="/images/castle1.jpg"
+        src="/pic.jpg"
         className="h-7 w-7 flex-shrink-0 rounded-full"
         width={50}
         height={50}
