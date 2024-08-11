@@ -36,10 +36,10 @@ export function MyBanksLamp({ user }: UserProp) {
         animate={controls}
         transition={{
           delay: 2,
-          duration: 1.2,
+          duration: 3,
           ease: "easeInOut",
         }}
-        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl font-secondary"
+        className="  bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl font-secondary"
       >
         Your Banks
       </motion.h1>
@@ -47,8 +47,8 @@ export function MyBanksLamp({ user }: UserProp) {
         initial={isMobile ? { opacity: 0, y: 0 } : { opacity: 0, y: 0 }}
         animate={controls2}
         transition={{
-          delay: 3,
-          duration: 0.6,
+          delay: 2,
+          duration: 0.75,
           ease: "easeInOut",
         }}
         className="mt-0 bg-gradient-to-br from-slate-300 to-slate-500 py-2 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent md:text-4xl font-secondary"

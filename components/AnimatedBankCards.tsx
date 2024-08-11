@@ -17,7 +17,7 @@ const AnimatedBankCards: React.FC<AnimatedBankCardsProps> = ({ accounts, userNam
           key={a.id}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 2, delay: 6}}
+          transition={{ duration: 1.5, delay: 4}}
         >
           <BankCard
             account={a}

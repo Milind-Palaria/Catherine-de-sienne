@@ -14,7 +14,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps>  = ({ text }) => {
     controls.start({
       opacity: 1,
       y: 0,
-      transition: { duration: 1, delay: 5 }, // Animation delay of 5 seconds
+      transition: { duration: 1, delay: 3 }, // Animation delay of 5 seconds
     });
   }, [controls]);
 

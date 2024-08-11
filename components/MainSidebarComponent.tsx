@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useRef } from "react";
 import {
-  IconArrowLeft,
-  IconBrandTabler,
-  IconSettings,
-  IconUserBolt,
+  IconBuildingBank,
+  IconHome,
+  IconCashRegister,
+  IconHomePlus,
+  IconCreditCardPay,
+  IconLogout
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -25,31 +27,46 @@ export function MainSidebarComponent() {
 
   const links = [
     {
+      label: "Home",
+      href: "/",
+      icon: (
+        <IconHome className="text-[#000]/60 dark:text-neutral-200 h-6 w-6 flex-shrink-0" />
+      ),
+    },
+    {
       label: "My Banks",
       href: "/my-banks",
       icon: (
-        <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconBuildingBank className="text-[#000]/60 dark:text-neutral-200 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
       label: "Transfer Payment",
       href: "/payment-transfer",
       icon: (
-        <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconCreditCardPay className="text-[#000]/60 dark:text-neutral-200 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
       label: "Transaction History",
       href: "/transaction-history",
       icon: (
-        <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconCashRegister className="text-[#000]/60 dark:text-neutral-200 h-6 w-6 flex-shrink-0" />
       ),
     },
     {
       label: "Connect Bank +",
       href: "#",
       icon: (
-        <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconHomePlus className="text-[#000]/60 dark:text-neutral-200 h-6 w-6 flex-shrink-0" />
+      ),
+      onClick: handleClick,
+    },
+    {
+      label: "Logout",
+      href: "#",
+      icon: (
+        <IconLogout className="text-[#000]/60 dark:text-neutral-200 h-6 w-6 flex-shrink-0" />
       ),
       onClick: handleClick,
     },
@@ -58,12 +75,12 @@ export function MainSidebarComponent() {
   return (
     <div
       className={cn(
-        "rounded-md flex flex-col md:flex-row bg-transparent w-fit mx-auto overflow-hidden "
+        "rounded-md flex flex-col md:flex-row bg-transparent w-fit mx-auto overflow-hidden"
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
-        <SidebarBody className="justify-between gap-10">
-          <div className="flex flex-col flex-1 overflow-y-auto">
+        <SidebarBody className="justify-between gap-10 ">
+          <div className="flex flex-col flex-1 overflow-y-auto " style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {open ? <Logo /> : <LogoIcon />}
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
@@ -85,7 +102,7 @@ export function MainSidebarComponent() {
                 icon: (
                   <Image
                     src="/pic.jpg"
-                    className="h-7 w-7 flex-shrink-0 rounded-full"
+                    className="h-7 w-7 flex-shrink-0 rounded-full border border-[#000]"
                     width={50}
                     height={50}
                     alt="Avatar"
