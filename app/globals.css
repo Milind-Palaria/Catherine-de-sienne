@@ -244,16 +244,23 @@
   }
 
   /* Bank Card */
+  /* .bank-card {
+    @apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[20px] border border-white bg-white/50 shadow-creditCard backdrop-blur-[8px];
+  } */
   .bank-card {
-    @apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[20px] border border-white bg-bank-gradient shadow-creditCard backdrop-blur-[6px];
+    @apply relative flex h-[210px] w-full min-w-[340px] justify-between rounded-[20px] border border-white/50 bg-white/0 backdrop-blur-[2px];
   }
-
-  .bank-card_content {
+  /* .bank-card_content {
     @apply relative z-10 flex size-full max-w-[228px] flex-col justify-between rounded-l-[20px] bg-gray-700 bg-bank-gradient px-5 pb-4 pt-5;
+  } */
+ .bank-card_content {
+    @apply relative z-10 flex size-full max-w-[228px] flex-col justify-between rounded-l-[20px] bg-white/30 px-5 pb-4 pt-5;
   }
-
-  .bank-card_icon {
+  /* .bank-card_icon {
     @apply flex size-full flex-1 flex-col items-end justify-between rounded-r-[20px] bg-bank-gradient bg-cover bg-center bg-no-repeat py-5 pr-5;
+  } */
+  .bank-card_icon {
+    @apply flex size-full flex-1 flex-col items-end justify-between rounded-r-[20px] bg-black-2/50 py-5 pr-5;
   }
 
   /* Bank Info */

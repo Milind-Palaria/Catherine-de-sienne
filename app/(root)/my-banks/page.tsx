@@ -52,12 +52,12 @@ const MyBanks = async () => {
           <MyBanksLamp user={loggedIn?.firstName || 'Guest'} />
 
           {/* <div className="mt-[25vh] md:mt-[30vh]"> */}
-          <div className="mt-[25vh] md:mt-[30vh]">
+          <div className="mt-[25vh] md:mt-[35vh] mx-[20vw] pb-9">
 
             <h2 className="text-xl md:text-5xl text-[rgba(0,255,255,0.45)] font-medium font-secondary text-center mb-3">
               Your cards
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex items-center justify-center flex-wrap gap-6 md:gap-10">
               {accounts && accounts.data.map((a: Account) => (
                 <>
                   <BankCard
@@ -65,16 +65,7 @@ const MyBanks = async () => {
                     account={a}
                     userName={loggedIn?.firstName}
                   />
-                    <BankCard
-                    key={accounts.id}
-                    account={a}
-                    userName={loggedIn?.firstName}
-                  />
-                    <BankCard
-                    key={accounts.id}
-                    account={a}
-                    userName={loggedIn?.firstName}
-                  />
+                 
                 </>
 
               ))}
