@@ -61,7 +61,7 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
 
       {showBalance && <Copy title={account?.shareableId} />}
       </div>
-      <p className='text-white text-center pt-2'>Copy above address & <Link href={`/payment-transfer`} className="underline font-semibold"> tranfer here.</Link></p>
+      <p className='text-white text-center pt-2'>Copy above address & <Link href={`/payment-transfer`} className="underline font-semibold"> transfer here.</Link></p>
 
     </div>
   )

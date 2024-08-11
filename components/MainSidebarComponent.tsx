@@ -81,7 +81,7 @@ export function MainSidebarComponent() {
             <SidebarLink
               link={{
                 label: "User Name",
-                href: "#",
+                href: "/",
                 icon: (
                   <Image
                     src="/pic.jpg"
@@ -105,11 +105,11 @@ export function MainSidebarComponent() {
 export const Logo = () => {
   return (
     <Link
-      href="#"
+      href="/"
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
       <Image
-        src="/pic.jpg"
+        src="/icons/cathedral-logo.png"
         className="h-7 w-7 flex-shrink-0 rounded-full"
         width={50}
         height={50}
@@ -130,11 +130,11 @@ export const Logo = () => {
 export const LogoIcon = () => {
   return (
     <Link
-      href="#"
+      href="/"
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
       <Image
-        src="/pic.jpg"
+        src="/icons/cathedral-logo.png"
         className="h-7 w-7 flex-shrink-0 rounded-full"
         width={50}
         height={50}
