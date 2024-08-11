@@ -44,7 +44,7 @@ const Transfer = async () => {
       <div className="home-content">
         <header className="home-header">
           <PaymentTransferLamp user={loggedIn?.firstName || 'Guest'} />
-          <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[20vw] pb-7 ">
+          <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[3vw] pb-7 ">
 
             <section className=" size-full pt-5">
 
