@@ -22,7 +22,7 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
   const accountsData = accounts?.data;
   const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
 
-  const account = await getAccount({ appwriteItemId })
+  const account = await getAccount({ appwriteItemId });
 
 
   const rowsPerPage = 10;
@@ -86,15 +86,10 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
       <div className="home-content">
         <header className="home-header">
           <PaymentHistoryLamp user={loggedIn?.firstName || 'Guest'} />
+          {/* <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[3vw] pb-7 ">
+          </div> */}
           <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[3vw] pb-7 ">
-
-            <section className=" size-full pt-5">
-
-              {/* <AnimatedTransferForm accounts={accounts.data} /> */}
-            </section>
-          </div>
-          <div>
-            <div className="transactions-account">
+            <div className="transactions-account max-md:w-[85vw] max-md:m-auto">
               <div className="flex flex-col gap-2">
                 <h2 className="text-18 font-bold text-white">{account?.data.name}</h2>
                 <p className="text-14 text-blue-25">
@@ -111,12 +106,12 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
               </div>
             </div>
 
-            <section className="flex w-full flex-col gap-6">
+            <section className="flex w-[85vw] flex-col gap-6 mt-4">
               <TransactionsTable
                 transactions={currentTransactions}
               />
               {totalPages > 1 && (
-                <div className="my-4 w-full">
+                <div className="my-4 w-full text-white">
                   <Pagination totalPages={totalPages} page={currentPage} />
                 </div>
               )}
