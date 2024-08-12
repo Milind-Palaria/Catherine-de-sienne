@@ -22,7 +22,7 @@ export const GlowingStarsBackgroundCard = ({
         setMouseEnter(false);
       }}
       className={cn(
-        "bg-neutral-800 hover:bg-neutral-950 p-1 max-w-2xl max-h-[18.5rem] h-full w-full rounded-sm border border-neutral-600 opacity-80 duration-100",
+        "bg-[#fff]/10 hover:bg-[#000]/40 backdrop-blur-md p-1 max-w-2xl max-h-[18.5rem] h-full w-full rounded-sm border border-neutral-600 opacity-80 duration-0",
         className
       )}
     >

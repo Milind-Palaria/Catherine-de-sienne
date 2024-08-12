@@ -19,7 +19,7 @@ export function NavigatingCards() {
   };
 
   return (
-    <div className="flex flex-wrap max-md:gap-5 md:p-20 items-center justify-center antialiased">
+    <div className="flex flex-wrap max-md:gap-5 md:p-20 items-center justify-center antialiased md:px-[10rem]">
       <Link href="/my-banks">
         <GlowingStarsBackgroundCard>
           <GlowingStarsTitle>My Banks</GlowingStarsTitle>
