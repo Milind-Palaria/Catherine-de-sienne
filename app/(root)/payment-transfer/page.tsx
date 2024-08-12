@@ -41,7 +41,7 @@ const Transfer = async () => {
           )}
         />
       </div>
-      <MainSidebarComponent />
+      <MainSidebarComponent user={loggedIn}/>
       <div className="home-content">
         <header className="home-header">
           <PaymentTransferLamp user={loggedIn?.firstName || 'Guest'} />

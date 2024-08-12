@@ -83,7 +83,7 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
           )}
         />
       </div>
-      <MainSidebarComponent />
+      <MainSidebarComponent user={loggedIn}/>
       <div className="home-content">
         <header className="home-header">
           <PaymentHistoryLamp user={loggedIn?.firstName || 'Guest'} />

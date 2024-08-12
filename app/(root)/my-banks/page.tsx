@@ -50,7 +50,7 @@ const MyBanks = async () => {
           )}
         />
           </div>
-      <MainSidebarComponent />
+      <MainSidebarComponent user={loggedIn}/>
       <div className="home-content">
         <header className="home-header">
           <MyBanksLamp user={loggedIn?.firstName || 'Guest'} />
