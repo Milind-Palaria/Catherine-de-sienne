@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   IconBuildingBank,
   IconHome,
@@ -14,16 +14,29 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
 import ConnectingBankButton from "./ConnectingBankButton";
+import { logoutAccount } from "@/lib/actions/user.actions";
+import { useRouter } from "next/navigation";
 
-export function MainSidebarComponent() {
+export function MainSidebarComponent({ user }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const connectingBankButtonRef = useRef(null);
+  const router = useRouter();
+  const handleLogOut = async () => {
+    const loggedOut = await logoutAccount();
+
+    if(loggedOut) router.push('/welcome')
+  }
+  useEffect(() => {
+  console.log(user)
+  
+  }, [])
 
   const handleClick = () => {
     if (connectingBankButtonRef.current) {
       connectingBankButtonRef.current.clickButton();
     }
   };
+
 
   const links = [
     {
@@ -68,7 +81,7 @@ export function MainSidebarComponent() {
       icon: (
         <IconLogout className="text-[#000]/60 dark:text-neutral-200 h-6 w-6 flex-shrink-0" />
       ),
-      onClick: handleClick,
+      onClick: handleLogOut,
     },
   ];
 
@@ -87,7 +100,7 @@ export function MainSidebarComponent() {
                 <div
                   key={idx}
                   onClick={link.onClick}
-                  className="cursor-pointer"
+                  className="cursor-pointer "
                 >
                   <SidebarLink link={link} />
                 </div>
@@ -97,7 +110,7 @@ export function MainSidebarComponent() {
           <div>
             <SidebarLink
               link={{
-                label: "User Name",
+                label: `${user.firstName} ${user.lastName}`,
                 href: "/",
                 icon: (
                   <Image
@@ -136,7 +149,7 @@ export const Logo = () => {
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="font-medium text-black dark:text-white whitespace-pre"
+        className="font-bold text-[#000] dark:text-white whitespace-pre !font-primary tracking-wider text-xl -translate-x-4"
       >
         Catherine de Sienne
       </motion.span>

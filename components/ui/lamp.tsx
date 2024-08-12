@@ -111,7 +111,7 @@ export const LampContainer = ({
           duration: 1,
           ease: "easeInOut",
         }}
-        className="relative z-50 flex flex-col items-center px-5"
+        className="relative z-50 flex flex-col items-center md:px-5"
       >
         {children}
       </motion.div>

@@ -47,7 +47,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
           )}
         />
           </div>
-        <MainSidebarComponent />
+        <MainSidebarComponent user={loggedIn}/>
 
         <div className="home-content">
           <header className="home-header">
