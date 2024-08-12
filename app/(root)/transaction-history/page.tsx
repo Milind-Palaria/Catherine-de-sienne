@@ -1,3 +1,4 @@
+import AnimatedAccountDetails from '@/components/AnimatedAccountDetails';
 import HeaderBox from '@/components/HeaderBox'
 import DotPattern from '@/components/magicui/dot-pattern';
 import { MainSidebarComponent } from '@/components/MainSidebarComponent';
@@ -88,7 +89,7 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
           <PaymentHistoryLamp user={loggedIn?.firstName || 'Guest'} />
           {/* <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[3vw] pb-7 ">
           </div> */}
-          <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[3vw] pb-7 ">
+          {/* <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[3vw] pb-7 ">
             <div className="transactions-account max-md:w-[85vw] max-md:m-auto">
               <div className="flex flex-col gap-2">
                 <h2 className="text-18 font-bold text-white">{account?.data.name}</h2>
@@ -116,6 +117,14 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
                 </div>
               )}
             </section>
+          </div> */}
+          <div>
+          <AnimatedAccountDetails
+        account={account}
+        currentTransactions={currentTransactions}
+        totalPages={totalPages}
+        currentPage={currentPage}
+      />
           </div>
         </header>
 
