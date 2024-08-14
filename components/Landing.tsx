@@ -32,7 +32,7 @@ export function Landing({ accountsData, totalBanks, totalCurrentBalance }: Landi
             } `}>
             <div className="relative">
                 <div className="flex flex-col md:flex-row mt-[20vh] max-md:items-center max-md:justify-center md:mt-[30vh] xl:border rounded-md border-neutral-800 bg-[#000]/20 backdrop-blur-lg">
-                    <FeatureCard key="Deploy in seconds" className="border-b lg:border-none -translate-y-32 !overflow-visible">
+                    <FeatureCard key="Deploy in seconds 1" className="border-b lg:border-none -translate-y-32 !overflow-visible">
                         <TotalBalanceBox
                             accounts={accountsData}
                             totalBanks={totalBanks}
@@ -53,8 +53,7 @@ export function Landing({ accountsData, totalBanks, totalCurrentBalance }: Landi
                     >
                         <FeatureTitle>Transfer in seconds</FeatureTitle>
                         <FeatureDescription>
-                            With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.
-                        </FeatureDescription>
+                            Experience fast and secure transfers between accounts with encrypted connections. Easily access detailed transaction records, ensuring both speed and safety in every transaction.                        </FeatureDescription>
                         <div className="h-full w-full"><SkeletonFour /></div>
                     </FeatureCard>
                 </div>

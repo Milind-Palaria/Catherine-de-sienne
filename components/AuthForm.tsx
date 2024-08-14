@@ -186,8 +186,8 @@ const AuthForm = ({ type }: { type: string }) => {
               <p className="text-12 md:text-[14px] text-center text-white">
                 {"Don't have an account? "}
                 <Link href="/sign-up">
-                  <span className="hover:underline text-primary hover:text-primary/80">
-                    Create an account
+                  <span className="hover:underline text-primary hover:text-primary/80 font-semibold">
+                    Sign up
                   </span>
                 </Link>
               </p>
@@ -195,7 +195,7 @@ const AuthForm = ({ type }: { type: string }) => {
               <p className="text-12 md:text-[14px] text-center text-white">
                 {"Already have an account? "}
                 <Link href="/sign-in">
-                  <span className="hover:underline text-primary hover:text-primary/80">
+                  <span className="hover:underline text-primary hover:text-primary/80 font-semibold">
                     Sign In
                   </span>
                 </Link>

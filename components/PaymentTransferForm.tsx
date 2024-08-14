@@ -95,7 +95,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(submit)} className="flex flex-col bg-[#000]/30 p-10 px-6 md:px-20 border border-white/60 backdrop-blur-sm rounded-md">
+      <form onSubmit={form.handleSubmit(submit)} className="flex flex-col bg-[#000]/30 p-10 px-6 md:px-20 border border-white/60 backdrop-blur-sm rounded-md max-md:-translate-y-[6.5vh]">
         <h1 className="w-full text-center text-white text-3xl p-2">Transfer Details</h1>
         <FormField
           control={form.control}
@@ -134,7 +134,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
               <div className="payment-transfer_form-item pb-6 pt-5">
                 <div className="payment-transfer_form-content">
                   <FormLabel className="text-14 font-medium text-white/85">
-                    Transfer Note (Optional)
+                    Transfer Note
                   </FormLabel>
                   <FormDescription className="text-12 font-semibold text-white/65">
                     Please provide any additional information or instructions

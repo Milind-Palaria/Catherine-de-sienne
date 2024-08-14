@@ -139,7 +139,7 @@ export const Logo = () => {
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
       <Image
-        src="/icons/cathedral-logo.png"
+        src="/globe.png"
         className="h-7 w-7 flex-shrink-0 rounded-full"
         width={50}
         height={50}
@@ -164,7 +164,7 @@ export const LogoIcon = () => {
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
     >
       <Image
-        src="/icons/cathedral-logo.png"
+        src="/globe.png"
         className="h-7 w-7 flex-shrink-0 rounded-full"
         width={50}
         height={50}

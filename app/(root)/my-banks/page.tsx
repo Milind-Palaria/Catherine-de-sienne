@@ -56,7 +56,7 @@ const MyBanks = async () => {
           <MyBanksLamp user={loggedIn?.firstName || 'Guest'} />
 
           {/* <div className="mt-[25vh] md:mt-[30vh]"> */}
-          <div className="relative z-[2] mt-[25vh] md:mt-[32vh] mx-[20vw] pb-7 ">
+          <div className="relative z-[2] mt-[22.5vh] md:mt-[32vh] mx-[20vw] pb-7 ">
 
            <AnimatedTitle text={"Accounts"}/>
            <AnimatedBankCards accounts={accounts.data} userName={loggedIn?.firstName} />

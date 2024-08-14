@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Catherine De Sienne - The Merchant Bank',
   description: 'Catherine De Sienne - The Merchant Bank',
-  icons: '/icons/cathedral-logo.png',
+  icons: '/globe2.png',
 };
 
 export default function RootLayout({

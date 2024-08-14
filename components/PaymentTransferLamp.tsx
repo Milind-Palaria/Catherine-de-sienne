@@ -51,7 +51,7 @@ export function PaymentTransferLamp({ user }: UserProp) {
           duration: 0.75,
           ease: "easeInOut",
         }}
-        className="mt-0 bg-gradient-to-br from-slate-300 to-slate-500 py-2 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent md:text-4xl font-secondary"
+        className="mt-0 bg-gradient-to-br from-slate-300 to-slate-500 py-2 px-2 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent md:text-4xl font-secondary"
       >
         Effortlessly transfer money from one account to another.
       </motion.h1>

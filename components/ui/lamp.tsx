@@ -37,7 +37,7 @@ export const LampContainer = ({
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   useEffect(() => {
     if (isMobile) {
-      controls.start({ y: "-77vh" });
+      controls.start({ y: "-80vh" });
     } else {
       controls.start({ y: "-73.5vh" });
     }

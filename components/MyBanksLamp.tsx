@@ -23,7 +23,7 @@ export function MyBanksLamp({ user }: UserProp) {
 
   useEffect(() => {
     if (isMobile) {
-      controls2.start({ opacity: 0.7, y: 0 });
+      controls2.start({ opacity: 0.7, y: 0  });
     } else {
       controls2.start({ opacity: 0.7, y: 0 });
     }
@@ -51,7 +51,7 @@ export function MyBanksLamp({ user }: UserProp) {
           duration: 0.75,
           ease: "easeInOut",
         }}
-        className="mt-0 bg-gradient-to-br from-slate-300 to-slate-500 py-2 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent md:text-4xl font-secondary"
+        className="mt-0 bg-gradient-to-br from-slate-300 to-slate-500 py-2 px-4 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent md:text-4xl font-secondary"
       >
         Effortlessly manage your banking activites.
       </motion.h1>
