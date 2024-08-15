@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import ClientComponent from './ClientComponent';
+import MainLoader from './MainLoader';
 
 export default function ClientWrapper({
   children,
@@ -34,48 +35,12 @@ export default function ClientWrapper({
   return (
     <div>
       {loading && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#000',
-            zIndex: 9999, 
-          }}
-        >
-          <div
-            style={{
-              border: '4px solid rgba(0, 0, 0, 0.1)',
-              borderLeftColor: '#000',
-              borderRadius: '50%',
-              width: '40px',
-              height: '40px',
-              animation: 'spin 1s linear infinite',
-            }}
-          />
-          <h1 className='loader-text'>Loading...</h1>
-          <style jsx>{`
-            @keyframes spin {
-              to {
-                transform: rotate(360deg);
-              }
-            }
-              .loader-text{
-              font-size:10vh;
-              color:white;
-              }
-          `}</style>
-        </div>
+        <MainLoader />
       )}
 
       <div style={{ visibility: loading ? 'hidden' : 'visible' }}>
         <ClientComponent>
-            {children}
+          {children}
         </ClientComponent>
       </div>
     </div>
