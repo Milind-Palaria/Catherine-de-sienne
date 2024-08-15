@@ -16,7 +16,7 @@ export default function ClientWrapper({
     const maxLoadTime = setTimeout(stopLoader, 10000);
     const handleLoad = () => {
       clearTimeout(maxLoadTime);
-      setTimeout(stopLoader, 0);
+      setTimeout(stopLoader, 5000);
     };
 
     if (document.readyState === 'complete') {
@@ -44,8 +44,8 @@ export default function ClientWrapper({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#fff',
-            zIndex: 9999, // Ensure loader is on top
+            backgroundColor: '#000',
+            zIndex: 9999, 
           }}
         >
           <div
@@ -58,12 +58,17 @@ export default function ClientWrapper({
               animation: 'spin 1s linear infinite',
             }}
           />
+          <h1 className='loader-text'>Loading...</h1>
           <style jsx>{`
             @keyframes spin {
               to {
                 transform: rotate(360deg);
               }
             }
+              .loader-text{
+              font-size:10vh;
+              color:white;
+              }
           `}</style>
         </div>
       )}
