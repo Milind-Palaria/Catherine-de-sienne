@@ -1,8 +1,14 @@
-Here’s a detailed README file for your **Catherine de Sienne** repository:
-
----
-
 # Catherine de Sienne
+
+![Home Page](/images/Screenshots/welcome.png)
+![Home Page](/images/Screenshots/login.png)
+![Home Page](/images/Screenshots/register.png)
+![Home Page](/images/Screenshots/home.png)
+![Home Page](/images/Screenshots/mybanks.png)
+![Home Page](/images/Screenshots/transaction.png)
+![Home Page](/images/Screenshots/history.png)
+![Home Page](/images/Screenshots/connect.png)
+
 
 Catherine de Sienne is a comprehensive financial SaaS platform designed to empower users to manage their finances effectively. By connecting to multiple bank accounts, the platform offers real-time transaction monitoring, secure money transfers between users, and a host of other features to streamline financial management.
 
@@ -116,10 +122,10 @@ Here is a brief overview of the project's structure:
 │   ├── styles/         # Global styles and Tailwind CSS configuration
 │   ├── public/         # TypeScript types and interfaces
 │   ├── constants/      # TypeScript types and interfaces
-│   ├── data/          # TypeScript types and interfaces
+│   ├── data/           # TypeScript types and interfaces
 │   ├── types/          # TypeScript types and interfaces
 │   └── utils/          # TypeScript types and interfaces
-├── .env.example        # Static files
+├── .env.example        # Env File Example
 └── README.md           # Project documentation
 ```
 
