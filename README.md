@@ -1,39 +1,34 @@
-# Catherine de Sienne
+# 💵 Catherine de Sienne - The Merchant Bank 💵
 
-![Home Page](/images/Screenshots/welcome.png)
-![Home Page](/images/Screenshots/login.png)
-![Home Page](/images/Screenshots/register.png)
-![Home Page](/images/Screenshots/home.png)
-![Home Page](/images/Screenshots/mybanks.png)
-![Home Page](/images/Screenshots/transaction.png)
-![Home Page](/images/Screenshots/history.png)
-![Home Page](/images/Screenshots/connect.png)
+![Welcome Page](public\Images\Screenshots\welcome.png)
 
+**Catherine de Sienne** is a comprehensive financial SaaS platform designed to empower users to manage their finances effectively. By connecting to multiple bank accounts, the platform offers real-time transaction monitoring, secure money transfers between users, and a host of other features to streamline financial management.
 
-Catherine de Sienne is a comprehensive financial SaaS platform designed to empower users to manage their finances effectively. By connecting to multiple bank accounts, the platform offers real-time transaction monitoring, secure money transfers between users, and a host of other features to streamline financial management.
+## 📑 Table of Contents
 
-## Table of Contents
+- [✨ Features](#features)
+- [🛠️ Technologies Used](#technologies-used)
+- [⚙️ Installation](#installation)
+- [🔒 Environment Variables](#environment-variables)
+- [🚀 Running the Application](#running-the-application)
+- [🗂️ Project Structure](#project-structure)
+- [🤝 Contributing](#contributing)
+- [📜 License](#license)
+- [📞 Contact](#contact)
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Environment Variables](#environment-variables)
-- [Running the Application](#running-the-application)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+## ✨ Features
 
-## Features
+- **🔗 Multiple Bank Connections:** Securely connect to various bank accounts using Plaid and Dwolla.
+- **📈 Real-time Transaction Monitoring:** View transactions as they happen, providing a clear overview of your financial activities.
+- **💸 Fund Transfers:** Transfer money between your accounts or to other users on the platform with ease.
+- **📊 Comprehensive Financial Management:** Manage your finances from a single, intuitive dashboard.
+- **🔐 Secure Authentication:** User data is protected with Appwrite's secure authentication.
+- **📱 Responsive Design:** The interface is fully responsive, offering a seamless experience on both desktop and mobile devices.
+- **📉 Dynamic Data Visualizations:** View your financial data through engaging and informative charts using Chart.js.
 
-- **Multiple Bank Connections:** Securely connect to various bank accounts using Plaid and Dwolla.
-- **Real-time Transaction Monitoring:** View transactions as they happen, providing a clear overview of your financial activities.
-- **Fund Transfers:** Transfer money between your accounts or to other users on the platform with ease.
-- **Comprehensive Financial Management:** Manage your finances from a single, intuitive dashboard.
-- **Secure Authentication:** User data is protected with Appwrite's secure authentication.
-- **Responsive Design:** The interface is fully responsive, offering a seamless experience on both desktop and mobile devices.
-- **Dynamic Data Visualizations:** View your financial data through engaging and informative charts using Chart.js.
+![Login Page](public\Images\Screenshots\login.png)
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **[Next.js](https://nextjs.org/):** A React framework for building fast and user-friendly web applications.
 - **[TypeScript](https://www.typescriptlang.org/):** A typed superset of JavaScript that adds static types to the language.
@@ -46,7 +41,9 @@ Catherine de Sienne is a comprehensive financial SaaS platform designed to empow
 - **[Chart.js](https://www.chartjs.org/):** A simple yet flexible JavaScript charting library.
 - **[ShadCN](https://shadcn.dev/):** A component library for building modern, responsive UIs.
 
-## Installation
+![Registeration Page](public\Images\Screenshots\register.png)
+
+## ⚙️ Installation
 
 ### Prerequisites
 
@@ -55,14 +52,14 @@ Catherine de Sienne is a comprehensive financial SaaS platform designed to empow
 - Appwrite
 - Plaid and Dwolla API keys
 
-### Clone the Repository
+### 📥 Clone the Repository
 
 ```bash
 git clone https://github.com/milind-palara/catherine-de-sienne.git
 cd catherine-de-sienne
 ```
 
-### Install Dependencies
+### 📦 Install Dependencies
 
 Using Yarn:
 
@@ -76,7 +73,9 @@ Using npm:
 npm install
 ```
 
-## Environment Variables
+![Home Page](public\Images\Screenshots\home.png)
+
+## 🔒 Environment Variables
 
 Create a `.env.local` file in the root of your project and add the following environment variables:
 
@@ -91,7 +90,9 @@ NEXT_PUBLIC_DWOLLA_APP_KEY=<Your Dwolla app key>
 NEXT_PUBLIC_DWOLLA_APP_SECRET=<Your Dwolla app secret>
 ```
 
-## Running the Application
+![My Banks](public\Images\Screenshots\banks.png)
+
+## 🚀 Running the Application
 
 To run the application in development mode:
 
@@ -109,41 +110,56 @@ npm run dev
 
 The application will be available at `http://localhost:3000`.
 
-## Project Structure
+![Payment Transfer](public\Images\Screenshots\transfer.png)
+
+## 🗂️ Project Structure
 
 Here is a brief overview of the project's structure:
 
 ```
-├── public/             # Static files
+├── public/             # Static files like images, icons, and other assets
 ├── src/
 │   ├── app/            # Next.js pages and routing
 │   ├── components/     # Reusable React components
 │   ├── lib/            # Utility functions and helpers
 │   ├── styles/         # Global styles and Tailwind CSS configuration
-│   ├── public/         # TypeScript types and interfaces
-│   ├── constants/      # TypeScript types and interfaces
-│   ├── data/           # TypeScript types and interfaces
+│   ├── public/         # Publicly accessible files, like favicons and other static assets
+│   ├── constants/      # Constant values used across the application
+│   ├── data/           # Mock data, JSON files, or data fetching logic
 │   ├── types/          # TypeScript types and interfaces
-│   └── utils/          # TypeScript types and interfaces
-├── .env.example        # Env File Example
-└── README.md           # Project documentation
+│   └── utils/          # Helper functions and utility scripts
+├── .env.example        # Example of environment variable settings
+└── README.md           # Project documentation and instructions
+
 ```
 
-## Contributing
+![Transfer History](public\Images\Screenshots\history.png)
+
+## 🤝 Contributing
 
 We welcome contributions! If you would like to contribute to Catherine de Sienne, please follow these steps:
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
+1. **🍴 Fork** the repository.
+2. **🌿 Create** a new branch (`git checkout -b feature-branch`).
+3. **🛠️ Make** your changes.
+4. **💬 Commit** your changes (`git commit -m 'Add some feature'`).
+5. **📤 Push** to the branch (`git push origin feature-branch`).
+6. **🔍 Open** a pull request.
+
+![Connect Banks](public\Images\Screenshots\connect.png)
 
 Please ensure your code adheres to the project's coding standards and passes all tests.
 
-## License
+## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+For any inquiries or feedback, please contact us at:
+
+- **📧 Email**: palaria23@gmail.com
+- **🌐 Website**: [catherine-de-sienne.vercel.app](catherine-de-sienne.vercel.app)
+- **💻 GitHub**: [Catherine de Sienne Repository](https://github.com/Milind-Palaria/catherine-de-sienne)
 
 ---
