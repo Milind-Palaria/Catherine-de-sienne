@@ -6,15 +6,15 @@
 
 ## 📑 Table of Contents
 
-- [✨ Features](#features)
-- [🛠️ Technologies Used](#technologies-used)
-- [⚙️ Installation](#installation)
-- [🔒 Environment Variables](#environment-variables)
-- [🚀 Running the Application](#running-the-application)
-- [🗂️ Project Structure](#project-structure)
-- [🤝 Contributing](#contributing)
-- [📜 License](#license)
-- [📞 Contact](#contact)
+- [✨ Features](#-features)
+- [🛠️ Technologies Used](#-technologies-used)
+- [⚙️ Installation](#-installation)
+- [🔒 Environment Variables](#-environment-variables)
+- [🚀 Running the Application](#-running-the-application)
+- [🗂️ Project Structure](#-project-structure)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+- [📞 Contact](#-contact)
 
 ## ✨ Features
 
