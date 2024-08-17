@@ -1,6 +1,6 @@
 # 💵 Catherine de Sienne - The Merchant Bank 💵
 
-![Welcome Page](public\Images\Screenshots\welcome.png)
+![Welcome Page](/images/welcome.png)
 
 **Catherine de Sienne** is a comprehensive financial SaaS platform designed to empower users to manage their finances effectively. By connecting to multiple bank accounts, the platform offers real-time transaction monitoring, secure money transfers between users, and a host of other features to streamline financial management.
 
@@ -26,7 +26,7 @@
 - **📱 Responsive Design:** The interface is fully responsive, offering a seamless experience on both desktop and mobile devices.
 - **📉 Dynamic Data Visualizations:** View your financial data through engaging and informative charts using Chart.js.
 
-![Login Page](public\Images\Screenshots\login.png)
+![Login Page](/images/login.png)
 
 ## 🛠️ Technologies Used
 
@@ -41,7 +41,7 @@
 - **[Chart.js](https://www.chartjs.org/):** A simple yet flexible JavaScript charting library.
 - **[ShadCN](https://shadcn.dev/):** A component library for building modern, responsive UIs.
 
-![Registeration Page](public\Images\Screenshots\register.png)
+![Registeration Page](/images/register.png)
 
 ## ⚙️ Installation
 
@@ -73,7 +73,7 @@ Using npm:
 npm install
 ```
 
-![Home Page](public\Images\Screenshots\home.png)
+![Home Page](/images/home.png)
 
 ## 🔒 Environment Variables
 
@@ -90,7 +90,7 @@ NEXT_PUBLIC_DWOLLA_APP_KEY=<Your Dwolla app key>
 NEXT_PUBLIC_DWOLLA_APP_SECRET=<Your Dwolla app secret>
 ```
 
-![My Banks](public\Images\Screenshots\banks.png)
+![My Banks](/images/banks.png)
 
 ## 🚀 Running the Application
 
@@ -110,7 +110,7 @@ npm run dev
 
 The application will be available at `http://localhost:3000`.
 
-![Payment Transfer](public\Images\Screenshots\transfer.png)
+![Payment Transfer](/images/transfer.png)
 
 ## 🗂️ Project Structure
 
@@ -133,7 +133,7 @@ Here is a brief overview of the project's structure:
 
 ```
 
-![Transfer History](public\Images\Screenshots\history.png)
+![Transfer History](/images/history.png)
 
 ## 🤝 Contributing
 
@@ -146,7 +146,7 @@ We welcome contributions! If you would like to contribute to Catherine de Sienne
 5. **📤 Push** to the branch (`git push origin feature-branch`).
 6. **🔍 Open** a pull request.
 
-![Connect Banks](public\Images\Screenshots\connect.png)
+![Connect Banks](/images/connect.png)
 
 Please ensure your code adheres to the project's coding standards and passes all tests.
 
