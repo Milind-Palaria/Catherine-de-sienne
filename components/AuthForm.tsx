@@ -155,6 +155,10 @@ const AuthForm = ({ type }: { type: string }) => {
                     ? 'Sign In →' : 'Sign Up →'}
                   <BottomGradient />
                 </Button>
+                
+                {type === 'sign-in' && (
+
+              
                 <Button
                   type="button"
                   onClick={handleGuestLogin}
@@ -171,6 +175,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   ) : 'Login as Guest →'}
                   <BottomGradient />
                 </Button>
+                  )}
                 {/* {type === 'sign-in' && (
                   <div className="flex justify-end text-sm">
                     <Link href="/forgot-password" className="underline text-xs text-slate-200 opacity-75 hover:opacity-100 duration-300">
@@ -192,7 +197,7 @@ const AuthForm = ({ type }: { type: string }) => {
                 </Link>
               </p>
             ) : (
-              <p className="text-12 md:text-[14px] text-center text-white">
+              <p className="text-12 md:text-[14px] text-center text-white mt-4">
                 {"Already have an account? "}
                 <Link href="/sign-in">
                   <span className="hover:underline text-primary hover:text-primary/80 font-semibold">

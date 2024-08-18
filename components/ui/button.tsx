@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
+import { useLoader } from "@/components/context/LoaderContext"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
@@ -40,12 +40,22 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, onClick, ...props }, ref) => {
+    const { setLoading } = useLoader(); // Access the loader context
     const Comp = asChild ? Slot : "button"
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      setLoading(true); // Trigger loader on button click
+      if (onClick) {
+        onClick(e); // Call any additional onClick handler passed as a prop
+      }
+    }
+
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        onClick={handleClick} // Attach custom handleClick to trigger loader
         {...props}
       />
     )

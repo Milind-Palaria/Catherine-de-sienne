@@ -1,31 +1,27 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation'; // Correct import for client-side routing
+import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Loader from '../components/Loader';
+import { useLoader } from './context/LoaderContext';
 
 export default function ClientComponent({ children }: { children: React.ReactNode }) {
-  const [loading, setLoading] = useState(false);
+  const { loading, setLoading } = useLoader();
   const pathname = usePathname();
-  const [prevPathname, setPrevPathname] = useState(pathname);
-    // useEffect(() => {
-    //   const loader = document.getElementById('globalLoader');
-    //   if (loader) {
-    //     loader.style.display = 'none';
-    //   }
-    // }, []);
+  const prevPathnameRef = useRef(pathname);
+
   useEffect(() => {
-    if (pathname !== prevPathname) {
+    if (pathname !== prevPathnameRef.current) {
       setLoading(true);
-      setPrevPathname(pathname);
+      prevPathnameRef.current = pathname;
     }
 
     const timeoutId = setTimeout(() => {
       setLoading(false);
-    }, 300); // Adjust this delay as needed to simulate loading
+    }, 300);
 
     return () => clearTimeout(timeoutId);
-  }, [pathname, prevPathname]);
+  }, [pathname, setLoading]);
 
   return (
     <>
