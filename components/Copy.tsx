@@ -16,10 +16,9 @@ const Copy = ({ title }: { title: string }) => {
   };
 
   return (
-    <Button
+    <a
       data-state="closed"
       className="mt-3 flex max-w-[320px] gap-4 bg-[#000]/20 backdrop-blur-sm border border-white/80"
-      variant="secondary"
       onClick={copyToClipboard}
     >
       <p className="line-clamp-1 w-full max-w-full text-xs font-medium text-white/90">
@@ -58,7 +57,7 @@ const Copy = ({ title }: { title: string }) => {
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
       )}
-    </Button>
+    </a>
   );
 };
 
