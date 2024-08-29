@@ -29,6 +29,7 @@
     "dwolla-v2": "^3.4.0",
     "framer-motion": "^11.2.13",
     "gsap": "^3.12.5",
+    "howler": "^2.2.4",
     "lucide-react": "^0.381.0",
     "next": "14.2.3",
     "next-router-mock": "^0.9.13",
@@ -50,6 +51,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/howler": "^2.2.11",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
