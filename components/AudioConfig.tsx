@@ -13,9 +13,10 @@ export default function AudioConfig({
     const [showPrompt, setShowPrompt] = useState(false);
     const [fadeIn, setFadeIn] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    
+
 
     const playAudio = () => {
+        console.log("third")
         if (audioRef.current) {
             audioRef.current.play().catch((error) => {
                 console.log('Autoplay prevented:', error);
@@ -40,8 +41,9 @@ export default function AudioConfig({
         const timer = setTimeout(() => {
             setShowPrompt(true);
             setTimeout(() => setFadeIn(true), 100);
+            console.log("second")
         }, 8000);
-
+console.log("first");
         return () => clearTimeout(timer);
     }, []);
     return (
@@ -56,7 +58,7 @@ export default function AudioConfig({
                     <button onClick={playAudio}>Play</button> <span>|</span>
                     <button onClick={pauseAudio}>Pause</button>
                 </div>)
-                    : showPrompt &&  (<div className={`fixed h-screen w-full top-0 left-0 backdrop-blur-md duration-500 bg-zinc-950/10 z-[999999999999999999999] flex items-center justify-center transition-opacity ${fadeIn ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                    : showPrompt && (<div className={`fixed h-screen w-full top-0 left-0 backdrop-blur-md duration-500 bg-zinc-950/10 z-[999999999999999999999] flex items-center justify-center transition-opacity ${fadeIn ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                         <div className='h-[30%] w-[80%] border-2 flex items-center justify-center text-white flex-col'>
 
                             <h1 className='text-3xl md:text-6xl pb-10'>  Enable Jazz ?</h1>

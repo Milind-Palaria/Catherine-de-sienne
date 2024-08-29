@@ -18,7 +18,6 @@ const Loader = () => {
     const blinker = () => {
         const t2 = gsap.timeline({
           onComplete: () => {
-            console.log("completed");
           },
         });
         t2.to("#para", {
