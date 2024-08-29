@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AppProps } from 'next/app';
 
 
@@ -9,10 +9,10 @@ export default function AudioConfig({
 }: {
     children: React.ReactNode;
 }) {
-
+    const [activated, setActivated] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    
 
-const activated= false;
     const playAudio = () => {
         if (audioRef.current) {
             audioRef.current.play().catch((error) => {
@@ -21,16 +21,19 @@ const activated= false;
         }
     };
 
-    useEffect(() => {
-        playAudio();
-    }, []);
-
     const pauseAudio = () => {
         if (audioRef.current) {
             audioRef.current.pause();
         }
     };
-
+    const handleActivation = (play: boolean) => {
+        if (play) {
+            playAudio();
+        } else {
+            pauseAudio();
+        }
+        setActivated(true);
+    };
     return (
         <>
             <audio ref={audioRef} loop>
@@ -48,10 +51,10 @@ const activated= false;
 
                             <h1 className='text-3xl md:text-6xl pb-10'>  Enable Jazz ?</h1>
                             <div className=' flex items-center justify-center gap-10'>
-                                <button className='text-xl md:text-3xl duration-300 hover:border-b-2 border-[#fff]' onClick={playAudio}>
+                                <button className='text-xl md:text-3xl duration-300 hover:border-b-2 border-[#fff]' onClick={() => handleActivation(true)}>
                                     Yes
                                 </button>
-                                <button className='text-xl md:text-3xl duration-300 hover:border-b-2 border-[#ffffff]' onClick={pauseAudio}>
+                                <button className='text-xl md:text-3xl duration-300 hover:border-b-2 border-[#ffffff]' onClick={() => handleActivation(false)}>
                                     No
                                 </button>
                             </div>
