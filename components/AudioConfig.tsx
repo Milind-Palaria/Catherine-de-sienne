@@ -10,6 +10,8 @@ export default function AudioConfig({
     children: React.ReactNode;
 }) {
     const [activated, setActivated] = useState(false);
+    const [showPrompt, setShowPrompt] = useState(false);
+    const [fadeIn, setFadeIn] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
     
 
@@ -34,6 +36,14 @@ export default function AudioConfig({
         }
         setActivated(true);
     };
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowPrompt(true);
+            setTimeout(() => setFadeIn(true), 100);
+        }, 8000);
+
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <>
             <audio ref={audioRef} loop>
@@ -41,12 +51,12 @@ export default function AudioConfig({
                 Your browser does not support the audio element.
             </audio>
             {
-                activated ? (<div className='fixed top-10 right-10 bg-white text-zinc-900 p-5 flex items-center justify-center gap-5 z-[999999999999999999999]'>
+                activated ? (<div className='fixed max-md:bottom-2 max-md:left-[50%] max-md:translate-x-[-50%] md:top-10 md:right-10 rounded-md backdrop-blur-md bg-zinc-950/10 text-white  p-3 flex items-center justify-center gap-3 z-[999999999999999999999]'>
 
-                    <button onClick={playAudio}>Play</button>
+                    <button onClick={playAudio}>Play</button> <span>|</span>
                     <button onClick={pauseAudio}>Pause</button>
                 </div>)
-                    : (<div className='fixed h-screen w-full top-0 left-0 backdrop-blur-md duration-300 bg-zinc-950/10 z-[999999999999999999999] flex items-center justify-center'>
+                    : showPrompt &&  (<div className={`fixed h-screen w-full top-0 left-0 backdrop-blur-md duration-500 bg-zinc-950/10 z-[999999999999999999999] flex items-center justify-center transition-opacity ${fadeIn ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                         <div className='h-[30%] w-[80%] border-2 flex items-center justify-center text-white flex-col'>
 
                             <h1 className='text-3xl md:text-6xl pb-10'>  Enable Jazz ?</h1>
