@@ -55,13 +55,13 @@ export default function AudioConfig({
         return () => clearTimeout(timer);
     }, []);
     return (
-        <div className='relative z-[99999]'>
+        <div className='relative z-[999999]'>
             <audio ref={audioRef} loop>
                 <source src="/BackgroundMusic.mp3" type="audio/mp3" />
                 Your browser does not support the audio element.
             </audio>
             {
-                activated ? (<div className='fixed max-md:bottom-2 max-md:left-[50%] max-md:translate-x-[-50%] md:top-10 md:right-10 rounded-md backdrop-blur-md bg-zinc-950/10 text-white border-2 border-white/50 p-3 flex items-center justify-center gap-3  z-[99999]'>
+                activated ? (<div className='fixed max-md:top-3 max-md:left-[5%] md:top-10 md:right-10 rounded-md backdrop-blur-md bg-zinc-950/10 text-white border-2 border-white/50 px-4 py-2 md:px-7 md:py-2 flex items-center justify-center gap-3  z-[99999]'>
                     {check ? 
                         <button onClick={playAudio}>Play</button> 
                         : 
@@ -69,9 +69,9 @@ export default function AudioConfig({
                     }
                 </div>)
                     : showPrompt && (<div className={`fixed h-screen w-full top-0 left-0 backdrop-blur-md duration-500 bg-zinc-950/10 flex items-center justify-center transition-opacity  z-[99999] ${fadeIn ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-                        <div className='h-[30%] w-[80%] border-2 flex items-center justify-center text-white flex-col'>
+                        <div className='h-[15%] md:h-[30%] w-[80%] border-2 flex items-center justify-center text-white flex-col bg-zinc-950/50'>
 
-                            <h1 className='text-3xl md:text-6xl pb-10'>  Enable Jazz ?</h1>
+                            <h1 className='text-3xl md:text-6xl pb-5 md:pb-10'>  Enable Music ? </h1>
                             <div className=' flex items-center justify-center gap-10'>
                                 <button className='text-xl md:text-3xl duration-300 hover:border-b-2 border-[#fff]' onClick={() => handleActivation(true)}>
                                     Yes
