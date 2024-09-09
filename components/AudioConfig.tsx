@@ -57,7 +57,7 @@ export default function AudioConfig({
     return (
         <div className='relative z-[999999]'>
             <audio ref={audioRef} loop>
-                <source src="/BackgroundMusic.mp3" type="audio/mp3" />
+                <source src="/bgm.mp3" type="audio/mp3" />
                 Your browser does not support the audio element.
             </audio>
             {
