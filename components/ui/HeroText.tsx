@@ -5,11 +5,11 @@ const words = ["Modern.", "Smart.", "Easy.", "Luxurious."];
 const HeroText = () => {
   return (
     <div className="lg:text-[4vw] md:text-[5vw] w-full font-semibold text-[#EAF2EF] flex flex-col text-center opacity-95">
-      <div className=' font-secondary  tracking-wide opacity-75 !font-extralight '>
+      <div className=' font-primary  tracking-wide opacity-75 !font-extralight '>
         banking made
         <FlipWords words={words} />
       </div>
-      <div className=' font-secondary lg:text-[3vw] md:text-[4vw] tracking-wide opacity-70 font-thin md:-translate-y-[14px]'>
+      <div className=' font-primary lg:text-[3vw] md:text-[4vw] tracking-wide opacity-70 font-thin md:-translate-y-[14px]'>
         with
       </div>
       <div className='flex max-md:flex-col justify-center items-center md:gap-10 md:-translate-y-[2px]'>
