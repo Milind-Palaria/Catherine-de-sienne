@@ -22,6 +22,8 @@
     "@sentry/nextjs": "^8.11.0",
     "@tabler/icons-react": "^3.11.0",
     "@types/styled-components": "^5.1.34",
+    "axios": "^1.7.7",
+    "catherine-de-sienne": "file:",
     "chart.js": "^4.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

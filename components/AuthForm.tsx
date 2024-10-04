@@ -42,8 +42,8 @@ const AuthForm = ({ type }: { type: string }) => {
 
   // Function to handle guest login
   const handleGuestLogin = () => {
-    form.setValue('email', 'guest@catherine.de.sienne');
-    form.setValue('password', 'guest@catherine.de.sienne');
+    form.setValue('email', 'guest-user@catherine.de.sienne');
+    form.setValue('password', 'guest-user@catherine.de.sienne');
     setGuestLoginTriggered(true);
   };
 

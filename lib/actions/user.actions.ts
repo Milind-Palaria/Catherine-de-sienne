@@ -34,14 +34,14 @@ export const signIn = async ({ email, password }: signInProps) => {
   try {
     const { account } = await createAdminClient();
     const session = await account.createEmailPasswordSession(email, password);
-
+    
     cookies().set("appwrite-session", session.secret, {
       path: "/",
       httpOnly: true,
       sameSite: "strict",
       secure: true,
     });
-
+    
     const user = await getUserInfo({ userId: session.userId })
     // const response = await account.createEmailPasswordSession(email, password);
     return parseStringify(user);
