@@ -1,8 +1,28 @@
+<div align="center">
+
 # 💵 Catherine de Sienne - The Merchant Bank 💵
 
 ![Welcome Page](/data/assets/Main_gif.gif)
 
 **Catherine de Sienne** is a comprehensive financial SaaS platform designed to empower users to manage their finances effectively. By connecting to multiple bank accounts, the platform offers real-time transaction monitoring, secure money transfers between users, and a host of other features to streamline financial management.
+<div align="center">
+    <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
+    <img src="https://img.shields.io/badge/-Typescript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="tailwindcss" />
+    <img src="https://img.shields.io/badge/-appwrite-black?style=for-the-badge&logoColor=white&logo=appwrite&color=FD366E" alt="Firebase" />
+    <img src="https://img.shields.io/badge/-Vercel-black?style=for-the-badge&logoColor=white&logo=vercel&color=000000" alt="vercel" />
+    <img src="https://img.shields.io/badge/-ZOD-black?style=for-the-badge&logoColor=white&logo=zod&color=263238" alt="Zod" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+    <img src="https://img.shields.io/badge/-Plaid-black?style=for-the-badge&logoColor=white&logo=passport&color=18A497" alt="Plaid" />
+    <img src="https://img.shields.io/badge/-Dwolla-black?style=for-the-badge&logoColor=white&logo=adobedreamweaver&color=FF61F6" alt="Dwolla" />
+    <img src="https://img.shields.io/badge/-Chart.js-black?style=for-the-badge&logoColor=white&logo=chartdotjs&color=FF6384" alt="React Hook Form" />
+    <img src="https://img.shields.io/badge/-React Hook Form-black?style=for-the-badge&logoColor=white&logo=reacthookform&color=46178F" alt="React Hook Form" />
+    
+
+<br>
+
+
+  </div>
+</div>
 
 ## 📑 Table of Contents
 
