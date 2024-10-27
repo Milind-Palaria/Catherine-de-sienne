@@ -18,7 +18,7 @@ export default function AudioConfig({
 
 
     const playAudio = () => {
-        console.log("third")
+        // console.log("third")
         setCheck(false);
         if (audioRef.current) {
             audioRef.current.play().catch((error) => {
@@ -48,16 +48,16 @@ export default function AudioConfig({
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowPrompt(true);
-            setTimeout(() => setFadeIn(true), 100);
-            console.log("second")
+            setTimeout(() => setFadeIn(true), 200);
+            // console.log("second")
         }, 8000);
-        console.log("first");
+        // console.log("first");
         return () => clearTimeout(timer);
     }, []);
     return (
         <div className='relative z-[999999]'>
             <audio ref={audioRef} loop>
-                <source src="/bgm.mp3" type="audio/mp3" />
+                <source src="/audio-editor-output.mp3" type="audio/mp3" />
                 Your browser does not support the audio element.
             </audio>
             {
