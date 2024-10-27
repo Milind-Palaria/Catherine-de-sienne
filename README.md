@@ -1,6 +1,6 @@
 # 💵 Catherine de Sienne - The Merchant Bank 💵
 
-![Welcome Page](/data/assets/welcome.png)
+![Welcome Page](/data/assets/Main_gif.gif)
 
 **Catherine de Sienne** is a comprehensive financial SaaS platform designed to empower users to manage their finances effectively. By connecting to multiple bank accounts, the platform offers real-time transaction monitoring, secure money transfers between users, and a host of other features to streamline financial management.
 
