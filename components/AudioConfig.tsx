@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { AppProps } from 'next/app';
+import Image from 'next/image';
 
 
 export default function AudioConfig({
@@ -61,11 +62,18 @@ export default function AudioConfig({
                 Your browser does not support the audio element.
             </audio>
             {
-                activated ? (<div className='fixed max-md:top-3 max-md:left-[5%] md:top-10 md:right-10 rounded-md backdrop-blur-md bg-zinc-950/10 text-white border-2 border-white/50 px-4 py-2 md:px-7 md:py-2 flex items-center justify-center gap-3  z-[99999]'>
+                activated ? (<div className='fixed max-md:top-3 max-md:left-[5%] md:top-10 md:right-10 backdrop-blur-md bg-zinc-950/10 text-white border-2 border-white/50 px-4 py-2 md:px-7 md:py-2 flex items-center justify-center gap-3  z-[99999] p-10 max-md:mt-[8px] rounded-[10rem] '>
                     {check ? 
-                        <button onClick={playAudio}>Play</button> 
+                        <button onClick={playAudio}>
+                        <Image  src="/icons/play-button.png"
+                        width={24}
+                        height={24}
+                        alt="play" className='invert grayscale contrast-200 max-md:w-3'/></button> 
                         : 
-                        <button onClick={pauseAudio}>Pause</button>
+                        <button onClick={pauseAudio}><Image  src="/icons/pause.png"
+                        width={24}
+                        height={24}
+                        alt="pause" className='invert grayscale contrast-200 max-md:w-3'/></button>
                     }
                 </div>)
                     : showPrompt && (<div className={`fixed h-screen w-full top-0 left-0 backdrop-blur-md duration-500 bg-zinc-950/10 flex items-center justify-center transition-opacity  z-[99999] ${fadeIn ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
