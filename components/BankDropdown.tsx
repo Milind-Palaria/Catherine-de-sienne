@@ -11,7 +11,7 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-} from "@/components/ui/Select";
+} from "@/components/ui/Selectv1";
 import { formUrlQuery, formatAmount } from "@/lib/utils";
 
 export const BankDropdown = ({
@@ -56,7 +56,7 @@ export const BankDropdown = ({
         <p className="line-clamp-1 w-full text-left">{selected.name}</p>
       </SelectTrigger>
       <SelectContent
-        className={`w-full bg-white/40 md:w-[300px] backdrop-blur-md ${otherStyles}`}
+        className={`w-full bg-white/40 md:w-[300px] backdrop-blur-md z-[99999999] ${otherStyles}`}
         align="end"
       >
         <SelectGroup>

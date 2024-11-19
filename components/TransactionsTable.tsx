@@ -9,6 +9,7 @@ import {
   } from "@/components/ui/table"
   import { transactionCategoryStyles } from "@/constants"
   import { cn, formatAmount, formatDateTime, getTransactionStatus, removeSpecialCharacters } from "@/lib/utils"
+import { useEffect } from "react"
   
   const CategoryBadge = ({ category }: CategoryBadgeProps) => {
     const {
@@ -27,6 +28,11 @@ import {
   } 
   
   const TransactionsTable = ({ transactions }: TransactionTableProps) => {
+
+    useEffect(() => {
+      console.log("Transactions data:", transactions);
+    }, [transactions]);
+    
     return (
       <Table>
         <TableHeader className="bg-transparent text-white">
